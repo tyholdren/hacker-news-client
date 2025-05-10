@@ -1,15 +1,31 @@
 import './App.css';
-import NavPanel from './NavPanel.js';
-import NewPage from './NewPage.js';
+import { useState } from 'react';
+import Navigation from './components/Navigation/Navigation.jsx';
+import Overview from './components/Overview/Overview.jsx';
+import DetailView from './components/DetailView/DetailView.jsx';
+import { VIEWS } from './constants.js';
+// import NewPage from './NewPage.js';
 
 const start = 0;
 const size = 50;
 
 function App() {
+  const [activeView, toggleActiveView] = useState(VIEWS.OVERVIEW);
+  const [overview, toggleOverview] = useState({});
+  const [detailViewData, setDetailViewData] = useState('');
+
+  // <NewPage startingIndex={start} pageSize={size} />
   return (
     <div className="App">
-      <NavPanel />
-      <NewPage startingIndex={start} pageSize={size} />
+      <Navigation
+        toggleActiveView={toggleActiveView}
+        toggleOverview={toggleOverview}
+      />
+      {activeView === VIEWS.OVERVIEW ? (
+        <Overview toggleActiveView={toggleActiveView} data={overview} />
+      ) : (
+        <DetailView data={detailViewData} />
+      )}
     </div>
   );
 }
