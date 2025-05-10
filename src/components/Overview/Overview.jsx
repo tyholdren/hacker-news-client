@@ -5,16 +5,16 @@ export default function Overview({
   setActiveView,
   setDetailData,
 }) {
-  const { value, desc, content } = overviewData;
+  const { value, desc, posts } = overviewData;
 
   return (
     <div>
       <h2>{value}</h2>
       <span>{desc}</span>
-      {content ? (
+      {posts ? (
         <>
           <ul>
-            {content.map(
+            {posts.map(
               ({ id, text, title, url, by, descendants, score, time }) => {
                 return (
                   <ListItem
