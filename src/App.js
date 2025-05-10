@@ -12,7 +12,7 @@ function App() {
   const [activeView, toggleActiveView] = useState(VIEWS.OVERVIEW);
   const [overview, toggleOverview] = useState({});
   const [detailViewData, setDetailViewData] = useState('');
-  console.log({ overview });
+
   return (
     <div className="App">
       <Navigation
@@ -21,7 +21,11 @@ function App() {
       />
 
       {activeView === VIEWS.OVERVIEW ? (
-        <Overview toggleActiveView={toggleActiveView} data={overview} />
+        <Overview
+          currentView={activeView}
+          toggleActiveView={toggleActiveView}
+          data={overview}
+        />
       ) : (
         <DetailView data={detailViewData} />
       )}

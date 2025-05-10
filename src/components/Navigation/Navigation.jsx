@@ -1,45 +1,43 @@
 import { useState, useEffect } from 'react';
 import { TABS, VIEWS } from '../../constants.js';
 
-export default function Navigation({ toggleOverview, toggleActiveView }) {
-  const [data, setData] = useState([]);
-  const [ids, setIds] = useState([]);
-  const [stories, setStories] = useState([]);
+export default function Navigation({
+  currentView,
+  toggleOverview,
+  toggleActiveView,
+}) {
   const [activeTab, setActiveTab] = useState(TABS.NEW);
-  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    async function fetchNew() {
-      console.log('fetching new');
-      setIsLoading(true);
-      try {
-        const res = await fetch(activeTab.ids);
+    handleNavigation();
+  }, []);
 
-        if (!res.ok) {
-          throw new Error('There was an error story ids');
-        }
+  async function handleNavigation(value = 'new') {
+    const newTab = TABS[value.toUpperCase()];
 
-        const data = await res.json();
-        setIds(data);
-
-        const stories = await fetchStories(data.slice(0, 20));
-        toggleOverview({ ...activeTab, content: stories });
-        //fetchStories(data.slice(start, start + pageSize));
-        //setStart(prev => prev + pageSize);
-      } catch (error) {
-        //setIsLoading(false);
-        console.error(error);
+    try {
+      const res = await fetch(newTab.ids);
+      if (!res.ok) {
+        throw new Error('There was an error story ids');
       }
+
+      const data = await res.json();
+      const stories = await fetchStories(data.slice(0, 20), newTab);
+      toggleOverview({ ...newTab, content: stories });
+      setActiveTab(newTab.value);
+      if (currentView !== VIEWS.OVERVIEW) {
+        toggleActiveView(VIEWS.OVERVIEW);
+      }
+    } catch (error) {
+      console.error(error);
     }
+  }
 
-    fetchNew();
-  }, [activeTab]);
-
-  async function fetchStories(data) {
+  async function fetchStories(data, tab) {
     const stories = await Promise.all(
       data.map(async id => {
         try {
-          const res = await fetch(`${activeTab.url}${id}.json`);
+          const res = await fetch(`${tab.url}${id}.json`);
           if (!res.ok) {
             throw new Error('Error fetching stories');
           }
@@ -47,20 +45,10 @@ export default function Navigation({ toggleOverview, toggleActiveView }) {
           return data;
         } catch (error) {
           console.error(error);
-        } finally {
-          setIsLoading(false);
         }
       })
     );
     return stories;
-  }
-
-  function handleNavigation(value) {
-    // could optimize by passing curView, and only
-    // update if curView !== views.overview
-    toggleActiveView(VIEWS.OVERVIEW);
-    const newTab = TABS[value.toUpperCase()];
-    setActiveTab(newTab);
   }
 
   return (
@@ -71,7 +59,16 @@ export default function Navigation({ toggleOverview, toggleActiveView }) {
           return (
             <li key={id}>
               {icon}
-              <button onClick={() => handleNavigation(value)}>{value}</button>
+              <button
+                style={{
+                  backgroundColor: `${
+                    value.toUpperCase() === activeTab ? 'yellow' : ''
+                  }`,
+                }}
+                onClick={() => handleNavigation(value)}
+              >
+                {value}
+              </button>
             </li>
           );
         })}
