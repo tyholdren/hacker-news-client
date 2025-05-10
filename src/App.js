@@ -11,7 +11,6 @@ function App() {
   const [overviewData, setOverviewData] = useState({});
   const [overviewCache, setOverviewCache] = useState({});
   const [detailData, setDetailData] = useState(null);
-  const [detailsCache, setDetailsCache] = useState({});
 
   const handleNavigation = getHandleNavigation({
     overviewCache,
@@ -20,7 +19,7 @@ function App() {
     activeView,
     setActiveView,
   });
-  console.log({ overviewCache });
+
   return (
     <div className="App" style={{ display: 'flex', gap: '2rem' }}>
       <Navigation
