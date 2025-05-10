@@ -3,10 +3,12 @@ import { ReactComponent as HomeIcon } from '../src/static/icons/HomeIcon.svg';
 const ID_BASE_START = 'https://hacker-news.firebaseio.com/v0/';
 const ID_BASE_END = '.json?print=pretty';
 
-const NEW_STORIES_IDS = `${ID_BASE_START}newstories${ID_BASE_END}`;
-const ASK_STORIES_IDS = `${ID_BASE_START}askstories${ID_BASE_END}`;
-const SHOW_STORIES_IDS = `${ID_BASE_START}showstories${ID_BASE_END}`;
-const JOB_STORIES_IDS = `${ID_BASE_START}jobstories${ID_BASE_END}`;
+const getIdURL = value => `${ID_BASE_START}${value}${ID_BASE_END}`;
+
+const NEW_STORIES_IDS = getIdURL('newstories');
+const ASK_STORIES_IDS = getIdURL('askstories');
+const SHOW_STORIES_IDS = getIdURL('showstories');
+const JOB_STORIES_IDS = getIdURL('jobstories');
 
 const URL_BASE = 'https://hacker-news.firebaseio.com/v0/item/';
 
