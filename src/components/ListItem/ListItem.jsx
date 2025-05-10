@@ -11,20 +11,33 @@ export default function ListItem({
   time,
   setActiveView,
 }) {
-  // <button onClick={() => setActiveView(VIEWS.DETAIL_VIEW)}></button>;
   // NOTE: ADD ICON LATER
+
   const formattedUrl = url ? formatUrl(url) : null;
+  const hasLink = url;
+
   return (
     <li key={id} style={{ marginBottom: '1rem' }}>
-      <a href={url} target="_blank">
-        {title}
-      </a>
+      {!hasLink ? (
+        <button onClick={() => setActiveView(VIEWS.DETAIL_VIEW)}>
+          {' '}
+          {title}
+        </button>
+      ) : (
+        <a href={url} target="_blank">
+          {title}
+        </a>
+      )}
+
       <span>{formattedUrl}</span>
       <div>
         <span>{score} points</span>
         <span>by {author}</span>
         <span>0 minutes ago</span>
-        <span>{commentCount} comments</span>
+        <button onClick={() => setActiveView(VIEWS.DETAIL_VIEW)}>
+          {' '}
+          {commentCount} comments
+        </button>
       </div>
     </li>
   );
