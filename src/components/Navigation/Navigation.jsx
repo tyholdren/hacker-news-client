@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { TABS } from '../../constants.js';
 import { getTabFromValue } from '../../utils/getTabFromValue.js';
 
-export default function Navigation({ handleNavigation }) {
+export default function Navigation({ cacheState, handleNavigation }) {
   const [activeTab, setActiveTab] = useState(TABS.NEW);
 
   useEffect(() => {
