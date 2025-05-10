@@ -1,17 +1,15 @@
 import ListItem from '../ListItem/ListItem.jsx';
 
 export default function Overview({ overviewData, setActiveView }) {
-  //<a href={url} target="_blank">
-  const { HEADER: header, SUB_HEADER: subHeader, content } = overviewData;
+  const { value, desc, content } = overviewData;
 
   return (
     <div>
-      <h2>{header}</h2>
-      <span>{subHeader}</span>
+      <h2>{value}</h2>
+      <span>{desc}</span>
       {content ? (
         <ul>
           {content.map(({ id, title, url, by, descendants, score, time }) => {
-            console.log({ content });
             return (
               <ListItem
                 key={id}

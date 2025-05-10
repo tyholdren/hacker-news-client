@@ -6,7 +6,7 @@ export default function ListItem({
   title,
   url,
   author,
-  commentCount,
+  commentCount = null,
   score,
   time,
   setActiveView,
@@ -14,11 +14,10 @@ export default function ListItem({
   // NOTE: ADD ICON LATER
 
   const formattedUrl = url ? formatUrl(url) : null;
-  const hasLink = url;
 
   return (
     <li key={id} style={{ marginBottom: '1rem' }}>
-      {!hasLink ? (
+      {!url ? (
         <button onClick={() => setActiveView(VIEWS.DETAIL_VIEW)}>
           {' '}
           {title}
@@ -34,10 +33,12 @@ export default function ListItem({
         <span>{score} points</span>
         <span>by {author}</span>
         <span>0 minutes ago</span>
-        <button onClick={() => setActiveView(VIEWS.DETAIL_VIEW)}>
-          {' '}
-          {commentCount} comments
-        </button>
+        {commentCount !== null && (
+          <button onClick={() => setActiveView(VIEWS.DETAIL_VIEW)}>
+            {' '}
+            {commentCount} comments
+          </button>
+        )}
       </div>
     </li>
   );

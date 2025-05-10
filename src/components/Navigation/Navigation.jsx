@@ -22,8 +22,8 @@ export default function Navigation({
       }
 
       const data = await res.json();
-      //const stories = await fetchStories(data, newTab);
       const stories = await fetchStories(data.slice(0, 20), newTab);
+
       setOverviewData({ ...newTab, content: stories });
       setActiveTab(newTab.value);
       if (currentView !== VIEWS.OVERVIEW) {
@@ -62,9 +62,7 @@ export default function Navigation({
               {icon}
               <button
                 style={{
-                  backgroundColor: `${
-                    value.toUpperCase() === activeTab ? 'yellow' : ''
-                  }`,
+                  backgroundColor: `${value === activeTab ? 'yellow' : ''}`,
                 }}
                 onClick={() => handleNavigation(value)}
               >
