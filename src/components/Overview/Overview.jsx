@@ -3,12 +3,14 @@ import ListItem from '../ListItem/ListItem.jsx';
 
 export default function Overview({ overviewData, setActiveView }) {
   //<a href={url} target="_blank">
-  const { HEADER, SUB_HEADER, content } = overviewData;
-
+  const { HEADER: header, SUB_HEADER: subHeader, content } = overviewData;
+  console.log({ content });
+  // NOTE: remove overviewData check below after
+  // we hook up api call for show and jobs routes
   return (
     <div>
-      <h2>{HEADER}</h2>
-      <span>{SUB_HEADER}</span>
+      <h2>{header}</h2>
+      <span>{subHeader}</span>
       {overviewData && content ? (
         <ul>
           {content.map(({ id, title, url }) => {

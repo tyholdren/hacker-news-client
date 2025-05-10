@@ -1,13 +1,14 @@
 import { ReactComponent as HomeIcon } from '../src/static/icons/HomeIcon.svg';
 
-const NEW_STORIES_IDS =
-  'https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty';
+const ID_BASE_START = 'https://hacker-news.firebaseio.com/v0/';
+const ID_BASE_END = '.json?print=pretty';
 
-const NEW_STORIES_URL = 'https://hacker-news.firebaseio.com/v0/item/';
+const NEW_STORIES_IDS = `${ID_BASE_START}newstories${ID_BASE_END}`;
+const ASK_STORIES_IDS = `${ID_BASE_START}askstories${ID_BASE_END}`;
+const SHOW_STORIES_IDS = `${ID_BASE_START}showstories${ID_BASE_END}`;
+const JOB_STORIES_IDS = `${ID_BASE_START}jobstories${ID_BASE_END}`;
 
-const ASK_STORIES_IDS =
-  'https://hacker-news.firebaseio.com/v0/askstories.json?print=pretty';
-const ASK_STORIES_URL = 'https://hacker-news.firebaseio.com/v0/item/';
+const URL_BASE = 'https://hacker-news.firebaseio.com/v0/item/';
 
 export const VIEWS = {
   OVERVIEW: 'overview',
@@ -22,7 +23,7 @@ export const TABS = {
     HEADER: 'New',
     SUB_HEADER: 'Discover the latest submissions in the Hacker New community.',
     ids: NEW_STORIES_IDS,
-    url: NEW_STORIES_URL,
+    url: URL_BASE,
   },
   ASK: {
     id: 1,
@@ -32,7 +33,7 @@ export const TABS = {
     SUB_HEADER:
       'Explore community-driven Q&A where users seek insights and advice',
     ids: ASK_STORIES_IDS,
-    url: ASK_STORIES_URL,
+    url: URL_BASE,
   },
   SHOW: {
     id: 2,
@@ -41,8 +42,8 @@ export const TABS = {
     HEADER: 'Show',
     SUB_HEADER:
       'Showcase your projects, products, and discoveries to the Hacker News audience',
-    ids: NEW_STORIES_IDS,
-    url: NEW_STORIES_URL,
+    ids: SHOW_STORIES_IDS,
+    url: URL_BASE,
   },
   JOBS: {
     id: 3,
@@ -51,7 +52,7 @@ export const TABS = {
     HEADER: 'Jobs',
     SUB_HEADER:
       'Connect with top tech job opportunities an company hiring posts.',
-    ids: NEW_STORIES_IDS,
-    url: NEW_STORIES_URL,
+    ids: JOB_STORIES_IDS,
+    url: URL_BASE,
   },
 };

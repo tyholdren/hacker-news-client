@@ -3,7 +3,7 @@ import { TABS, VIEWS } from '../../constants.js';
 
 export default function Navigation({
   currentView,
-  toggleActiveView,
+  setActiveView,
   setOverviewData,
 }) {
   const [activeTab, setActiveTab] = useState(TABS.NEW);
@@ -22,11 +22,12 @@ export default function Navigation({
       }
 
       const data = await res.json();
+      //const stories = await fetchStories(data, newTab);
       const stories = await fetchStories(data.slice(0, 20), newTab);
       setOverviewData({ ...newTab, content: stories });
       setActiveTab(newTab.value);
       if (currentView !== VIEWS.OVERVIEW) {
-        toggleActiveView(VIEWS.OVERVIEW);
+        setActiveView(VIEWS.OVERVIEW);
       }
     } catch (error) {
       console.error(error);
