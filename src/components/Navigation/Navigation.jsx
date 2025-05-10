@@ -22,7 +22,7 @@ export default function Navigation({
       }
 
       const data = await res.json();
-      const content = await fetchStories(data.slice(0, 20), newTab);
+      const content = await fetchStories(data.slice(0, 10), newTab);
 
       setOverviewData({ ...newTab, content });
       setActiveTab(newTab.value);

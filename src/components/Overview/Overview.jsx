@@ -12,28 +12,31 @@ export default function Overview({
       <h2>{value}</h2>
       <span>{desc}</span>
       {content ? (
-        <ul>
-          {content.map(
-            ({ id, text, title, url, by, descendants, score, time }) => {
-              console.log({ content });
-              return (
-                <ListItem
-                  key={id}
-                  id={id}
-                  title={title}
-                  text={text}
-                  url={url}
-                  author={by}
-                  commentCount={descendants}
-                  score={score}
-                  time={time}
-                  setActiveView={setActiveView}
-                  setDetailData={setDetailData}
-                />
-              );
-            }
-          )}
-        </ul>
+        <>
+          <ul>
+            {content.map(
+              ({ id, text, title, url, by, descendants, score, time }) => {
+                console.log({ content });
+                return (
+                  <ListItem
+                    key={id}
+                    id={id}
+                    title={title}
+                    text={text}
+                    url={url}
+                    author={by}
+                    commentCount={descendants}
+                    score={score}
+                    time={time}
+                    setActiveView={setActiveView}
+                    setDetailData={setDetailData}
+                  />
+                );
+              }
+            )}
+          </ul>
+          <button>More</button>
+        </>
       ) : (
         <div>Loading...</div>
       )}

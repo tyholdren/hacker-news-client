@@ -8,10 +8,12 @@ import { VIEWS } from './constants.js';
 function App() {
   const [activeView, setActiveView] = useState(VIEWS.OVERVIEW);
   const [overviewData, setOverviewData] = useState({});
+  const [overviewCache, setOverviewCache] = useState({});
   const [detailData, setDetailData] = useState(null);
+  const [detailsCache, setDetailsCache] = useState({});
 
   return (
-    <div className="App">
+    <div className="App" style={{ display: 'flex', gap: '2rem' }}>
       <Navigation
         currentView={activeView}
         setActiveView={setActiveView}
@@ -25,7 +27,7 @@ function App() {
           setDetailData={setDetailData}
         />
       ) : (
-        <DetailView detailData={detailData} />
+        <DetailView detailData={detailData} setActiveView={setActiveView} />
       )}
     </div>
   );
