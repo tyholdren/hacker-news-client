@@ -4,9 +4,9 @@ import { getTabFromValue } from '../../utils/getTabFromValue.js';
 
 export default function Navigation({ handleNavigation }) {
   const [activeTab, setActiveTab] = useState(TABS.NEW);
-  const defaultTab = getTabFromValue('new');
 
   useEffect(() => {
+    const defaultTab = getTabFromValue('new');
     handleNavigation(defaultTab, setActiveTab);
   }, []);
 
