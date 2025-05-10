@@ -22,9 +22,9 @@ export default function Navigation({
       }
 
       const data = await res.json();
-      const stories = await fetchStories(data.slice(0, 20), newTab);
+      const content = await fetchStories(data.slice(0, 20), newTab);
 
-      setOverviewData({ ...newTab, content: stories });
+      setOverviewData({ ...newTab, content });
       setActiveTab(newTab.value);
       if (currentView !== VIEWS.OVERVIEW) {
         setActiveView(VIEWS.OVERVIEW);
@@ -35,12 +35,12 @@ export default function Navigation({
   }
 
   async function fetchStories(data, tab) {
-    const stories = await Promise.all(
+    const content = await Promise.all(
       data.map(async id => {
         try {
           const res = await fetch(`${tab.url}${id}.json`);
           if (!res.ok) {
-            throw new Error('Error fetching stories');
+            throw new Error('Error fetching content');
           }
           const data = await res.json();
           return data;
@@ -49,7 +49,7 @@ export default function Navigation({
         }
       })
     );
-    return stories;
+    return content;
   }
 
   return (
