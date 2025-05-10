@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { TABS, VIEWS } from '../../constants.js';
+import getHandleNavigation from '../../utils/getHandleNavigation';
+import { TABS } from '../../constants.js';
 
 export default function Navigation({
   currentView,
@@ -8,49 +9,16 @@ export default function Navigation({
 }) {
   const [activeTab, setActiveTab] = useState(TABS.NEW);
 
+  const handleNavigation = getHandleNavigation({
+    setOverviewData,
+    setActiveTab,
+    currentView,
+    setActiveView,
+  });
+
   useEffect(() => {
-    handleNavigation();
+    handleNavigation('new');
   }, []);
-
-  async function handleNavigation(value = 'new') {
-    const newTab = TABS[value.toUpperCase()];
-
-    try {
-      const res = await fetch(newTab.ids);
-      if (!res.ok) {
-        throw new Error('There was an error story ids');
-      }
-
-      const data = await res.json();
-      const content = await fetchStories(data.slice(0, 10), newTab);
-
-      setOverviewData({ ...newTab, content });
-      setActiveTab(newTab.value);
-      if (currentView !== VIEWS.OVERVIEW) {
-        setActiveView(VIEWS.OVERVIEW);
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  async function fetchStories(data, tab) {
-    const content = await Promise.all(
-      data.map(async id => {
-        try {
-          const res = await fetch(`${tab.url}${id}.json`);
-          if (!res.ok) {
-            throw new Error('Error fetching content');
-          }
-          const data = await res.json();
-          return data;
-        } catch (error) {
-          console.error(error);
-        }
-      })
-    );
-    return content;
-  }
 
   return (
     <div>

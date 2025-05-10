@@ -1,5 +1,5 @@
 import { VIEWS } from '../../constants';
-import { formatUrl } from '../../utils';
+import formatUrl from '../../utils/formatUrl';
 
 export default function ListItem({
   id,

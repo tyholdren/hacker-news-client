@@ -1,5 +1,5 @@
 import { VIEWS } from '../../constants';
-import { parseHtmlWithDOMParser } from '../../utils';
+import parseHtmlWithDOMParser from '../../utils/parseHTML';
 
 export default function DetailView({ detailData, setActiveView }) {
   const { id, text, title, url, author, commentCount, score, time } =
