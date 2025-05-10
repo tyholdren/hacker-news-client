@@ -16,7 +16,6 @@ export default function Overview({
           <ul>
             {content.map(
               ({ id, text, title, url, by, descendants, score, time }) => {
-                console.log({ content });
                 return (
                   <ListItem
                     key={id}

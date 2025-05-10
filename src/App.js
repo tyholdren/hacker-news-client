@@ -4,6 +4,7 @@ import Navigation from './components/Navigation/Navigation.jsx';
 import Overview from './components/Overview/Overview.jsx';
 import DetailView from './components/DetailView/DetailView.jsx';
 import { VIEWS } from './constants.js';
+import getHandleNavigation from './utils/getHandleNavigation';
 
 function App() {
   const [activeView, setActiveView] = useState(VIEWS.OVERVIEW);
@@ -12,13 +13,15 @@ function App() {
   const [detailData, setDetailData] = useState(null);
   const [detailsCache, setDetailsCache] = useState({});
 
+  const handleNavigation = getHandleNavigation({
+    setOverviewData,
+    activeView,
+    setActiveView,
+  });
+
   return (
     <div className="App" style={{ display: 'flex', gap: '2rem' }}>
-      <Navigation
-        currentView={activeView}
-        setActiveView={setActiveView}
-        setOverviewData={setOverviewData}
-      />
+      <Navigation handleNavigation={handleNavigation} />
 
       {activeView === VIEWS.OVERVIEW ? (
         <Overview

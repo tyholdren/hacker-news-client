@@ -1,23 +1,13 @@
 import { useState, useEffect } from 'react';
-import getHandleNavigation from '../../utils/getHandleNavigation';
 import { TABS } from '../../constants.js';
+import { getTabFromValue } from '../../utils/getTabFromValue.js';
 
-export default function Navigation({
-  currentView,
-  setActiveView,
-  setOverviewData,
-}) {
+export default function Navigation({ handleNavigation }) {
   const [activeTab, setActiveTab] = useState(TABS.NEW);
-
-  const handleNavigation = getHandleNavigation({
-    setOverviewData,
-    setActiveTab,
-    currentView,
-    setActiveView,
-  });
+  const defaultTab = getTabFromValue('new');
 
   useEffect(() => {
-    handleNavigation('new');
+    handleNavigation(defaultTab, setActiveTab);
   }, []);
 
   return (
@@ -32,7 +22,10 @@ export default function Navigation({
                 style={{
                   backgroundColor: `${value === activeTab ? 'yellow' : ''}`,
                 }}
-                onClick={() => handleNavigation(value)}
+                onClick={() => {
+                  const currentTab = getTabFromValue(value);
+                  handleNavigation(currentTab, setActiveTab);
+                }}
               >
                 {value}
               </button>
@@ -43,13 +36,3 @@ export default function Navigation({
     </div>
   );
 }
-
-// function NavElement({ icon, value }) {
-//   // <a href="">{value}</a>
-//   return (
-//     <li>
-//       {icon}
-//       <button onClick={() => handleOverview(value)}>{value}</button>
-//     </li>
-//   );
-// }
