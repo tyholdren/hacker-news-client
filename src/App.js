@@ -5,29 +5,27 @@ import Overview from './components/Overview/Overview.jsx';
 import DetailView from './components/DetailView/DetailView.jsx';
 import { VIEWS } from './constants.js';
 
-const start = 0;
-const size = 50;
-
 function App() {
-  const [activeView, toggleActiveView] = useState(VIEWS.OVERVIEW);
-  const [overview, toggleOverview] = useState({});
-  const [detailViewData, setDetailViewData] = useState('');
+  const [activeView, setActiveView] = useState(VIEWS.OVERVIEW);
+  const [overviewData, setOverviewData] = useState({});
+  const [detailData, setDetailData] = useState(null);
 
   return (
     <div className="App">
       <Navigation
-        toggleActiveView={toggleActiveView}
-        toggleOverview={toggleOverview}
+        currentView={activeView}
+        setActiveView={setActiveView}
+        setOverviewData={setOverviewData}
       />
 
       {activeView === VIEWS.OVERVIEW ? (
         <Overview
-          currentView={activeView}
-          toggleActiveView={toggleActiveView}
-          data={overview}
+          setActiveView={setActiveView}
+          overviewData={overviewData}
+          setDetailData={setDetailData}
         />
       ) : (
-        <DetailView data={detailViewData} />
+        <DetailView detailData={detailData} />
       )}
     </div>
   );

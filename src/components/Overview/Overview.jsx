@@ -1,15 +1,15 @@
 import { formatUrl } from '../../utils.js';
 import ListItem from '../ListItem/ListItem.jsx';
 
-export default function Overview({ data, toggleActiveView }) {
+export default function Overview({ overviewData, setActiveView }) {
   //<a href={url} target="_blank">
-  const { HEADER, SUB_HEADER, content } = data;
+  const { HEADER, SUB_HEADER, content } = overviewData;
 
   return (
     <div>
       <h2>{HEADER}</h2>
       <span>{SUB_HEADER}</span>
-      {data && content ? (
+      {overviewData && content ? (
         <ul>
           {content.map(({ id, title, url }) => {
             const formattedUrl = url ? formatUrl(url) : null;
@@ -20,7 +20,7 @@ export default function Overview({ data, toggleActiveView }) {
                 id={id}
                 url={formattedUrl}
                 title={title}
-                toggleActiveView={toggleActiveView}
+                setActiveView={setActiveView}
               />
             );
           })}
