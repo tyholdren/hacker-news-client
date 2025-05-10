@@ -1,5 +1,4 @@
 import { ReactComponent as HomeIcon } from '../src/static/icons/HomeIcon.svg';
-//import { ReactComponent as HomeIcon } from '../../static/icons/HomeIcon.svg';
 
 const NEW_STORIES_IDS =
   'https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty';

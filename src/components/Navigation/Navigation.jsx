@@ -6,11 +6,12 @@ export default function Navigation({ toggleOverview, toggleActiveView }) {
   const [ids, setIds] = useState([]);
   const [stories, setStories] = useState([]);
   const [activeTab, setActiveTab] = useState(TABS.NEW);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function fetchNew() {
       console.log('fetching new');
-      //setIsLoading(true);
+      setIsLoading(true);
       try {
         const res = await fetch(activeTab.ids);
 
@@ -47,7 +48,7 @@ export default function Navigation({ toggleOverview, toggleActiveView }) {
         } catch (error) {
           console.error(error);
         } finally {
-          //setIsLoading(false);
+          setIsLoading(false);
         }
       })
     );
