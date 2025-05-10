@@ -1,4 +1,3 @@
-import { formatUrl } from '../../utils.js';
 import ListItem from '../ListItem/ListItem.jsx';
 
 export default function Overview({ overviewData, setActiveView }) {
@@ -11,15 +10,18 @@ export default function Overview({ overviewData, setActiveView }) {
       <span>{subHeader}</span>
       {content ? (
         <ul>
-          {content.map(({ id, title, url }) => {
-            const formattedUrl = url ? formatUrl(url) : null;
-
+          {content.map(({ id, title, url, by, descendants, score, time }) => {
+            console.log({ content });
             return (
               <ListItem
                 key={id}
                 id={id}
-                url={formattedUrl}
                 title={title}
+                url={url}
+                author={by}
+                commentCount={descendants}
+                score={score}
+                time={time}
                 setActiveView={setActiveView}
               />
             );
