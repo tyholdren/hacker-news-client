@@ -1,5 +1,5 @@
 import { ReactComponent as HomeIcon } from '../src/static/icons/HomeIcon.svg';
-
+export const SIZE = 10;
 const ID_BASE_START = 'https://hacker-news.firebaseio.com/v0/';
 const ID_BASE_END = '.json?print=pretty';
 

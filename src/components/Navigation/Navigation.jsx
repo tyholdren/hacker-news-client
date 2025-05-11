@@ -1,15 +1,11 @@
-import { useState, useEffect } from 'react';
-import { TABS } from '../../constants.js';
+import { TABS, VIEWS } from '../../constants.js';
 import { getTabFromValue } from '../../utils/getTabFromValue.js';
 
-export default function Navigation({ cacheState, handleNavigation }) {
-  const [activeTab, setActiveTab] = useState(TABS.NEW);
-
-  useEffect(() => {
-    const defaultTab = getTabFromValue('new');
-    handleNavigation(defaultTab, setActiveTab);
-  }, []);
-
+export default function Navigation({
+  setActiveView,
+  activeTabObj,
+  setActiveTabObj,
+}) {
   return (
     <div>
       <h4>Hacker News</h4>
@@ -20,11 +16,14 @@ export default function Navigation({ cacheState, handleNavigation }) {
               {icon}
               <button
                 style={{
-                  backgroundColor: `${value === activeTab ? 'yellow' : ''}`,
+                  backgroundColor: `${
+                    value === activeTabObj.value ? 'yellow' : ''
+                  }`,
                 }}
                 onClick={() => {
                   const currentTab = getTabFromValue(value);
-                  handleNavigation(currentTab, setActiveTab);
+                  setActiveTabObj(currentTab);
+                  setActiveView(VIEWS.OVERVIEW);
                 }}
               >
                 {value}

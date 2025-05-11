@@ -1,36 +1,35 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { TABS, VIEWS } from './constants.js';
 import Navigation from './components/Navigation/Navigation.jsx';
 import Overview from './components/Overview/Overview.jsx';
 import DetailView from './components/DetailView/DetailView.jsx';
-import { VIEWS } from './constants.js';
-import getHandleNavigation from './utils/getHandleNavigation';
+import handleTabInit from './utils/handleTabInit';
 
 function App() {
   const [activeView, setActiveView] = useState(VIEWS.OVERVIEW);
-  const [overviewData, setOverviewData] = useState({});
-  const [overviewCache, setOverviewCache] = useState({});
-  const [detailData, setDetailData] = useState(null);
+  const [activeTabObj, setActiveTabObj] = useState(TABS.NEW);
+  const [detailData, setDetailData] = useState({});
+  const [cache, setCache] = useState({});
 
-  const handleNavigation = getHandleNavigation({
-    overviewCache,
-    setOverviewCache,
-    setOverviewData,
-    activeView,
-    setActiveView,
-  });
+  useEffect(() => {
+    handleTabInit(activeTabObj, cache, setCache, 0);
+  }, [activeTabObj]);
 
   return (
     <div className="App" style={{ display: 'flex', gap: '2rem' }}>
       <Navigation
-        cacheState={overviewCache}
-        handleNavigation={handleNavigation}
+        setActiveView={setActiveView}
+        activeTabObj={activeTabObj}
+        setActiveTabObj={setActiveTabObj}
       />
 
       {activeView === VIEWS.OVERVIEW ? (
         <Overview
           setActiveView={setActiveView}
-          overviewData={overviewData}
+          activeTabObj={activeTabObj}
+          cacheState={cache}
+          setCache={setCache}
           setDetailData={setDetailData}
         />
       ) : (

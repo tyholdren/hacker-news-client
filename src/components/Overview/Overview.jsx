@@ -1,20 +1,24 @@
+import handleTabInit from '../../utils/handleTabInit.js';
 import ListItem from '../ListItem/ListItem.jsx';
 
 export default function Overview({
-  overviewData,
   setActiveView,
+  activeTabObj,
+  cacheState,
+  setCache,
   setDetailData,
 }) {
-  const { value, desc, posts } = overviewData;
+  const { value, desc } = activeTabObj;
+  const { data, startIndex } = cacheState[activeTabObj.value] || {};
 
   return (
     <div>
       <h2>{value}</h2>
       <span>{desc}</span>
-      {posts ? (
+      {data ? (
         <>
           <ul>
-            {posts.map(
+            {data.map(
               ({ id, text, title, url, by, descendants, score, time }) => {
                 return (
                   <ListItem
@@ -34,7 +38,19 @@ export default function Overview({
               }
             )}
           </ul>
-          <button>More</button>
+          <button
+            onClick={() => {
+              handleTabInit(
+                activeTabObj,
+                cacheState,
+                setCache,
+                startIndex,
+                true
+              );
+            }}
+          >
+            More
+          </button>
         </>
       ) : (
         <div>Loading...</div>
