@@ -18,6 +18,7 @@ export default function DetailView({ detailData, setActiveView }) {
 
   const { metric, difference } = getTimeDiff(time);
   const isPlural = value => (value > 1 ? 's' : '');
+
   return (
     <div>
       <button onClick={() => setActiveView(VIEWS.OVERVIEW)}>Back</button>
