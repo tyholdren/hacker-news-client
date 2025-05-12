@@ -15,7 +15,6 @@ export default function DetailView({ detailData, setActiveView }) {
   }, []);
 
   const { metric, difference } = getTimeDiff(time);
-  console.log(tree.children);
 
   return (
     <div>
@@ -33,9 +32,9 @@ export default function DetailView({ detailData, setActiveView }) {
           </span>
         </div>
         <div>{parseHTML(text)}</div>
-        <p>
+        <h4>
           {commentCount} comment{commentCount > 1 ? 's' : ''}
-        </p>
+        </h4>
         <ul>
           {tree.children &&
             tree.children
