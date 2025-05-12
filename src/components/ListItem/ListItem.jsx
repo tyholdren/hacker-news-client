@@ -1,5 +1,6 @@
 import { VIEWS } from '../../constants';
 import formatUrl from '../../utils/formatUrl';
+import getTimeDiff from '../../utils/getTimeDiff';
 
 export default function ListItem({
   id,
@@ -21,6 +22,8 @@ export default function ListItem({
     setDetailData({ id, text, title, url, author, commentCount, score, time });
   };
 
+  const { metric, difference } = getTimeDiff(time);
+
   return (
     <li key={id} style={{ marginBottom: '1rem' }}>
       {!url ? (
@@ -35,7 +38,9 @@ export default function ListItem({
       <div>
         <span>{score} points</span>
         <span>by {author}</span>
-        <span>0 minutes ago</span>
+        <span>
+          {difference} {metric} ago
+        </span>
         {commentCount !== null && (
           <button onClick={() => handleUpdate()}>
             {' '}

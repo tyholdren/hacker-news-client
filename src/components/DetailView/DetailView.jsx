@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { VIEWS } from '../../constants';
+import getTimeDiff from '../../utils/getTimeDiff';
 import getPostDetails from '../../utils/getPostDetails';
 import parseHTML from '../../utils/parseHTML';
 import Comment from '../Comment/Comment';
@@ -12,7 +13,9 @@ export default function DetailView({ detailData, setActiveView }) {
   useEffect(() => {
     getPostDetails(id, setTree);
   }, []);
-  console.log({ tree });
+
+  const { metric, difference } = getTimeDiff(time);
+  console.log(tree.children);
 
   return (
     <div>
@@ -22,17 +25,24 @@ export default function DetailView({ detailData, setActiveView }) {
         <div style={{ display: 'flex', gap: '1rem' }}>
           <span>{score} points</span>
           <span>{author}</span>
-          <span>0 minutes ago</span>
+          <span>
+            {difference} {metric} ago
+          </span>
           <span>
             {commentCount} comment{commentCount > 1 ? 's' : ''}
           </span>
         </div>
         <div>{parseHTML(text)}</div>
+        <p>
+          {commentCount} comment{commentCount > 1 ? 's' : ''}
+        </p>
         <ul>
           {tree.children &&
-            tree.children.map(child => {
-              return <Comment data={child} />;
-            })}
+            tree.children
+              .sort((a, b) => b.time - a.time)
+              .map(child => {
+                return <Comment data={child} />;
+              })}
         </ul>
       </div>
     </div>

@@ -9,8 +9,7 @@ export default function Overview({
   setDetailData,
 }) {
   const { value, desc } = activeTabObj;
-  const { data, startIndex } = cacheState[activeTabObj.value] || {};
-
+  const { data, startIndex, ids } = cacheState[activeTabObj.value] || {};
   return (
     <div>
       <h2>{value}</h2>
@@ -39,6 +38,7 @@ export default function Overview({
             )}
           </ul>
           <button
+            disabled={startIndex >= ids.length}
             onClick={() => {
               handleTabInit(
                 activeTabObj,
