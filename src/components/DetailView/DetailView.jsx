@@ -4,6 +4,7 @@ import getTimeDiff from '../../utils/getTimeDiff';
 import getPostDetails from '../../utils/getPostDetails';
 import parseHTML from '../../utils/parseHTML';
 import Comment from '../Comment/Comment';
+import sortByAscending from '../../utils/sortByAscending';
 
 export default function DetailView({ detailData, setActiveView }) {
   const [tree, setTree] = useState([]);
@@ -37,11 +38,9 @@ export default function DetailView({ detailData, setActiveView }) {
         </h4>
         <ul>
           {tree.children &&
-            tree.children
-              .sort((a, b) => b.time - a.time)
-              .map(child => {
-                return <Comment data={child} />;
-              })}
+            sortByAscending(tree.children, 'time').map(child => {
+              return <Comment data={child} />;
+            })}
         </ul>
       </div>
     </div>
