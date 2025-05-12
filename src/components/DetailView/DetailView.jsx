@@ -8,15 +8,16 @@ import sortByAscending from '../../utils/sortByAscending';
 
 export default function DetailView({ detailData, setActiveView }) {
   const [tree, setTree] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const { id, text, title, url, author, commentCount, score, time } =
     detailData;
 
   useEffect(() => {
-    getPostDetails(id, setTree);
+    getPostDetails(id, setTree, setIsLoading);
   }, []);
 
   const { metric, difference } = getTimeDiff(time);
-
+  const isPlural = value => (value > 1 ? 's' : '');
   return (
     <div>
       <button onClick={() => setActiveView(VIEWS.OVERVIEW)}>Back</button>
@@ -29,19 +30,23 @@ export default function DetailView({ detailData, setActiveView }) {
             {difference} {metric} ago
           </span>
           <span>
-            {commentCount} comment{commentCount > 1 ? 's' : ''}
+            {commentCount} comment{isPlural(commentCount)}
           </span>
         </div>
         <div>{parseHTML(text)}</div>
         <h4>
-          {commentCount} comment{commentCount > 1 ? 's' : ''}
+          {commentCount} comment{isPlural(commentCount)}
         </h4>
-        <ul>
-          {tree.children &&
-            sortByAscending(tree.children, 'time').map(child => {
-              return <Comment data={child} />;
-            })}
-        </ul>
+        {!isLoading ? (
+          <ul>
+            {tree.children &&
+              sortByAscending(tree.children, 'time').map(child => {
+                return <Comment data={child} />;
+              })}
+          </ul>
+        ) : (
+          <span>Loading comments...</span>
+        )}
       </div>
     </div>
   );
