@@ -6,15 +6,17 @@ import Overview from './components/Overview/Overview.jsx';
 import DetailView from './components/DetailView/DetailView.jsx';
 import handleTabInit from './utils/handleTabInit';
 import Footer from './Footer';
+import Loading from './components/Loading/Loading';
 
 function App() {
   const [activeView, setActiveView] = useState(VIEWS.OVERVIEW);
   const [activeTabObj, setActiveTabObj] = useState(TABS.NEW);
   const [detailData, setDetailData] = useState({});
   const [cache, setCache] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    handleTabInit(activeTabObj, cache, setCache, 0);
+    handleTabInit(activeTabObj, cache, setCache, 0, setIsLoading);
   }, [activeTabObj]);
 
   return (
@@ -24,20 +26,24 @@ function App() {
         activeTabObj={activeTabObj}
         setActiveTabObj={setActiveTabObj}
       />
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        {activeView === VIEWS.OVERVIEW ? (
-          <Overview
-            setActiveView={setActiveView}
-            activeTabObj={activeTabObj}
-            cacheState={cache}
-            setCache={setCache}
-            setDetailData={setDetailData}
-          />
-        ) : (
-          <DetailView detailData={detailData} setActiveView={setActiveView} />
-        )}
-        <Footer />
-      </div>
+      {!isLoading ? (
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          {activeView === VIEWS.OVERVIEW ? (
+            <Overview
+              setActiveView={setActiveView}
+              activeTabObj={activeTabObj}
+              cacheState={cache}
+              setCache={setCache}
+              setDetailData={setDetailData}
+            />
+          ) : (
+            <DetailView detailData={detailData} setActiveView={setActiveView} />
+          )}
+          <Footer />
+        </div>
+      ) : (
+        <Loading />
+      )}
     </div>
   );
 }

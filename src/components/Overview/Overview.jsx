@@ -1,5 +1,7 @@
 import handleTabInit from '../../utils/handleTabInit.js';
 import ListItem from '../ListItem/ListItem.jsx';
+import { ReactComponent as DownArrowIcon } from '../../static/icons/DownArrowIcon.svg';
+import Loading from '../Loading/Loading.jsx';
 
 export default function Overview({
   setActiveView,
@@ -12,10 +14,10 @@ export default function Overview({
   const { data, startIndex, ids } = cacheState[activeTabObj.value] || {};
   return (
     <div>
-      <h2>{value}</h2>
-      <span>{desc}</span>
       {data ? (
         <>
+          <h2>{value}</h2>
+          <span>{desc}</span>
           <ul>
             {data.map(
               ({ id, text, title, url, by, descendants, score, time }) => {
@@ -38,6 +40,11 @@ export default function Overview({
             )}
           </ul>
           <button
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            }}
             disabled={startIndex >= ids.length}
             onClick={() => {
               handleTabInit(
@@ -49,11 +56,11 @@ export default function Overview({
               );
             }}
           >
-            More
+            More <DownArrowIcon />
           </button>
         </>
       ) : (
-        <div>Loading...</div>
+        <Loading />
       )}
     </div>
   );

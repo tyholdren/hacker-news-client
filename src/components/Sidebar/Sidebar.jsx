@@ -14,6 +14,7 @@ export default function Sidebar({
         {Object.values(TABS).map(({ id, icon, value }) => {
           return (
             <SidebarChip
+              key={id}
               id={id}
               icon={icon}
               value={value}
