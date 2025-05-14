@@ -5,7 +5,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Overview from './components/Overview/Overview.jsx';
 import DetailView from './components/DetailView/DetailView.jsx';
 import handleTabInit from './utils/handleTabInit';
-import Footer from './Footer';
+import Footer from '../src/components/Footer/Footer.jsx';
 import Loading from './components/Loading/Loading';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    handleTabInit(activeTabObj, cache, setCache, 0, setIsLoading);
+    handleTabInit(activeTabObj, cache, setCache, 0);
   }, [activeTabObj]);
 
   return (
@@ -26,9 +26,18 @@ function App() {
         activeTabObj={activeTabObj}
         setActiveTabObj={setActiveTabObj}
       />
-      {!isLoading ? (
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          {activeView === VIEWS.OVERVIEW ? (
+      <main
+        style={{
+          flex: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: '100vh',
+        }}
+      >
+        <div style={{ flex: 1 }}>
+          {isLoading ? (
+            <Loading />
+          ) : activeView === VIEWS.OVERVIEW ? (
             <Overview
               setActiveView={setActiveView}
               activeTabObj={activeTabObj}
@@ -39,11 +48,9 @@ function App() {
           ) : (
             <DetailView detailData={detailData} setActiveView={setActiveView} />
           )}
-          <Footer />
         </div>
-      ) : (
-        <Loading />
-      )}
+        <Footer />
+      </main>
     </div>
   );
 }

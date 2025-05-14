@@ -8,6 +8,7 @@ import sortByAscending from '../../utils/sortByAscending';
 
 import MetaData from '../MetaData/MetaData';
 import isPlural from '../../utils/isPlural';
+import Loading from '../Loading/Loading';
 
 export default function DetailView({ detailData, setActiveView }) {
   const [tree, setTree] = useState([]);
@@ -47,7 +48,7 @@ export default function DetailView({ detailData, setActiveView }) {
               })}
           </ul>
         ) : (
-          <span>Loading comments...</span>
+          <Loading />
         )}
       </div>
     </div>

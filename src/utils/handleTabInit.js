@@ -7,17 +7,14 @@ export default async function handleTabInit(
   cache,
   setCache,
   startIndex,
-  setIsLoading,
   isLoadingMore = false
 ) {
   console.log('fetching posts');
   if (Object.hasOwn(cache, tab.value) && !isLoadingMore) {
-    setIsLoading(false);
     return;
   }
 
   try {
-    setIsLoading(true);
     const ids = await fetchIds(tab.ids);
     const postIds = ids.slice(startIndex, startIndex + SIZE);
     const posts = await fetchBatchPosts(postIds);
@@ -32,7 +29,5 @@ export default async function handleTabInit(
     }));
   } catch (error) {
     console.error(error);
-  } finally {
-    setIsLoading(false);
   }
 }
