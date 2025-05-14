@@ -2,6 +2,11 @@ import { VIEWS } from '../../constants';
 import formatUrl from '../../utils/formatUrl';
 import getTimeDiff from '../../utils/getTimeDiff';
 
+import { ReactComponent as PointsIcon } from '../../static/icons/PointsIcon.svg';
+import { ReactComponent as AuthorIcon } from '../../static/icons/AuthorIcon.svg';
+import { ReactComponent as CommentIcon } from '../../static/icons/CommentIcon.svg';
+import { ReactComponent as TimeIcon } from '../../static/icons/TimeIcon.svg';
+
 export default function ListItem({
   id,
   title,
@@ -35,18 +40,30 @@ export default function ListItem({
       )}
 
       <span>{formattedUrl}</span>
-      <div>
-        <span>{score} points</span>
-        <span>by {author}</span>
-        <span>
-          {difference} {metric} ago
-        </span>
-        {commentCount !== null && (
-          <button onClick={() => handleUpdate()}>
-            {' '}
-            {commentCount} comments
-          </button>
-        )}
+      <div style={{ display: 'flex', gap: '1rem' }}>
+        <div>
+          <PointsIcon />
+          <span>{score} points</span>
+        </div>
+        <div>
+          <AuthorIcon />
+          <span>by {author}</span>
+        </div>
+        <div>
+          <TimeIcon />
+          <span>
+            {difference} {metric} ago
+          </span>
+        </div>
+        <div>
+          <CommentIcon />
+          {commentCount !== null && (
+            <button onClick={() => handleUpdate()}>
+              {' '}
+              {commentCount} comments
+            </button>
+          )}
+        </div>
       </div>
     </li>
   );
