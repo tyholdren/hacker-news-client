@@ -6,10 +6,8 @@ import parseHTML from '../../utils/parseHTML';
 import Comment from '../Comment/Comment';
 import sortByAscending from '../../utils/sortByAscending';
 
-import { ReactComponent as PointsIcon } from '../../static/icons/PointsIcon.svg';
-import { ReactComponent as AuthorIcon } from '../../static/icons/AuthorIcon.svg';
-import { ReactComponent as CommentIcon } from '../../static/icons/CommentIcon.svg';
-import { ReactComponent as TimeIcon } from '../../static/icons/TimeIcon.svg';
+import MetaData from '../MetaData/MetaData';
+import isPlural from '../../utils/isPlural';
 
 export default function DetailView({ detailData, setActiveView }) {
   const [tree, setTree] = useState([]);
@@ -22,35 +20,21 @@ export default function DetailView({ detailData, setActiveView }) {
   }, []);
 
   const { metric, difference } = getTimeDiff(time);
-  const isPlural = value => (value > 1 ? 's' : '');
 
   return (
     <div>
       <button onClick={() => setActiveView(VIEWS.OVERVIEW)}>Back</button>
       <div style={{ marginLeft: '5rem' }}>
         <h1>{title}</h1>
-        <div style={{ display: 'flex', gap: '1rem' }}>
-          <div>
-            <PointsIcon />
-            <span>{score} points</span>
-          </div>
-          <div>
-            <AuthorIcon />
-            <span>{author}</span>
-          </div>
-          <div>
-            <TimeIcon />
-            <span>
-              {difference} {metric} ago
-            </span>
-          </div>
-          <div>
-            <CommentIcon />
-            <span>
-              {commentCount} comment{isPlural(commentCount)}
-            </span>
-          </div>
-        </div>
+        <MetaData
+          score={score}
+          author={author}
+          difference={difference}
+          metric={metric}
+          commentCount={commentCount}
+          isDetailView={true}
+        />
+
         <div>{parseHTML(text)}</div>
         <h4>
           {commentCount} comment{isPlural(commentCount)}

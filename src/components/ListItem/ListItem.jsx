@@ -1,41 +1,7 @@
 import { VIEWS } from '../../constants';
 import formatUrl from '../../utils/formatUrl';
 import getTimeDiff from '../../utils/getTimeDiff';
-
-import { ReactComponent as PointsIcon } from '../../static/icons/PointsIcon.svg';
-import { ReactComponent as AuthorIcon } from '../../static/icons/AuthorIcon.svg';
-import { ReactComponent as CommentIcon } from '../../static/icons/CommentIcon.svg';
-import { ReactComponent as TimeIcon } from '../../static/icons/TimeIcon.svg';
-
-/* 
-NOTE: THIS IS A COMPONENT THAT APPEARS IN DETAIL VIEW AS WELL 
-WE CAN SIMPLIFY THIS AND HAVE DIFFERENT SIZES FOR DIFFERENT PAGES
-<div style={{ display: 'flex', gap: '1rem' }}>
-<div>
-  <PointsIcon />
-  <span>{score} points</span>
-</div>
-<div>
-  <AuthorIcon />
-  <span>by {author}</span>
-</div>
-<div>
-  <TimeIcon />
-  <span>
-    {difference} {metric} ago
-  </span>
-</div>
-<div>
-  <CommentIcon />
-  {commentCount !== null && (
-    <button onClick={() => handleUpdate()}>
-      {' '}
-      {commentCount} comments
-    </button>
-  )}
-</div>
-</div>
- */
+import MetaData from '../MetaData/MetaData';
 
 export default function ListItem({
   id,
@@ -70,31 +36,15 @@ export default function ListItem({
       )}
 
       <span>{formattedUrl}</span>
-      <div style={{ display: 'flex', gap: '1rem' }}>
-        <div>
-          <PointsIcon />
-          <span>{score} points</span>
-        </div>
-        <div>
-          <AuthorIcon />
-          <span>by {author}</span>
-        </div>
-        <div>
-          <TimeIcon />
-          <span>
-            {difference} {metric} ago
-          </span>
-        </div>
-        <div>
-          <CommentIcon />
-          {commentCount !== null && (
-            <button onClick={() => handleUpdate()}>
-              {' '}
-              {commentCount} comments
-            </button>
-          )}
-        </div>
-      </div>
+      <MetaData
+        score={score}
+        author={author}
+        difference={difference}
+        metric={metric}
+        commentCount={commentCount}
+        isDetailView={false}
+        handleUpdate={handleUpdate}
+      />
     </li>
   );
 }
