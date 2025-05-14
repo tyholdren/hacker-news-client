@@ -1,4 +1,8 @@
-import { ReactComponent as HomeIcon } from '../src/static/icons/HomeIcon.svg';
+import { ReactComponent as NewIcon } from '../src/static/icons/NewIcon.svg';
+import { ReactComponent as JobsIcon } from '../src/static/icons/JobsIcon.svg';
+import { ReactComponent as ShowIcon } from '../src/static/icons/ShowIcon.svg';
+import { ReactComponent as AskIcon } from '../src/static/icons/AskIcon.svg';
+
 export const SIZE = 10;
 const ID_BASE_START = 'https://hacker-news.firebaseio.com/v0/';
 const ID_BASE_END = '.json?print=pretty';
@@ -22,28 +26,28 @@ export const VIEWS = {
 export const TABS = {
   NEW: {
     id: 0,
-    icon: <HomeIcon />,
+    icon: <NewIcon />,
     value: 'New',
     desc: 'Discover the latest submissions in the Hacker New community.',
     ids: NEW_STORIES_IDS,
   },
   ASK: {
     id: 1,
-    icon: <HomeIcon />,
+    icon: <AskIcon />,
     value: 'Ask',
     desc: 'Explore community-driven Q&A where users seek insights and advice',
     ids: ASK_STORIES_IDS,
   },
   SHOW: {
     id: 2,
-    icon: <HomeIcon />,
+    icon: <ShowIcon />,
     value: 'Show',
     desc: 'Showcase your projects, products, and discoveries to the Hacker News audience',
     ids: SHOW_STORIES_IDS,
   },
   JOBS: {
     id: 3,
-    icon: <HomeIcon />,
+    icon: <JobsIcon />,
     value: 'Jobs',
     desc: 'Connect with top tech job opportunities an company hiring posts.',
     ids: JOB_STORIES_IDS,
