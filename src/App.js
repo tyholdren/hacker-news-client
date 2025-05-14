@@ -1,7 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import { TABS, VIEWS } from './constants.js';
-import Navigation from './components/Navigation/Navigation.jsx';
+import Sidebar from './components/Sidebar/Sidebar';
 import Overview from './components/Overview/Overview.jsx';
 import DetailView from './components/DetailView/DetailView.jsx';
 import handleTabInit from './utils/handleTabInit';
@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className="App" style={{ display: 'flex', gap: '2rem' }}>
-      <Navigation
+      <Sidebar
         setActiveView={setActiveView}
         activeTabObj={activeTabObj}
         setActiveTabObj={setActiveTabObj}
