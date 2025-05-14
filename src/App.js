@@ -16,7 +16,13 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    handleTabInit(activeTabObj, cache, setCache, 0);
+    handleTabInit({
+      tab: activeTabObj,
+      cache,
+      setCache,
+      startIndex: 0,
+      setIsLoading,
+    });
   }, [activeTabObj]);
 
   return (

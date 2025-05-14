@@ -2,15 +2,20 @@ import { SIZE } from '../constants';
 import fetchBatchPosts from './fetchBatchPosts';
 import fetchIds from './fetchIds';
 
-export default async function handleTabInit(
+export default async function handleTabInit({
   tab,
   cache,
   setCache,
   startIndex,
-  isLoadingMore = false
-) {
-  console.log('fetching posts');
+  setIsLoading = () => {},
+  isLoadingMore = false,
+}) {
+  const hasData = !!cache[tab?.value]?.data.length;
+  if (!hasData) {
+    setIsLoading(true);
+  }
   if (Object.hasOwn(cache, tab.value) && !isLoadingMore) {
+    setIsLoading(false);
     return;
   }
 
@@ -29,5 +34,7 @@ export default async function handleTabInit(
     }));
   } catch (error) {
     console.error(error);
+  } finally {
+    setIsLoading(false);
   }
 }

@@ -47,13 +47,13 @@ export default function Overview({
             }}
             disabled={startIndex >= ids.length}
             onClick={() => {
-              handleTabInit(
-                activeTabObj,
-                cacheState,
+              handleTabInit({
+                tab: activeTabObj,
+                cache: cacheState,
                 setCache,
                 startIndex,
-                true
-              );
+                isLoadingMore: true,
+              });
             }}
           >
             More <DownArrowIcon />
