@@ -1,6 +1,19 @@
+import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { TABS } from '../../constants';
 import SidebarChip from '../SidebarChip/SidebarChip';
+
+function useOnKeydown(key, fn) {
+  useEffect(() => {
+    function handleKeydown(event) {
+      if (event.key === key) {
+        fn();
+      }
+    }
+    document.addEventListener('keydown', handleKeydown);
+    return () => document.removeEventListener('keydown', handleKeydown);
+  }, [fn]);
+}
 
 export default function Portal({
   setActiveView,
@@ -8,6 +21,8 @@ export default function Portal({
   setActiveTabObj,
   toggleShowPortal,
 }) {
+  useOnKeydown('Escape', () => toggleShowPortal(false));
+
   return createPortal(
     <div className="modal">
       <div className="modal-content">
