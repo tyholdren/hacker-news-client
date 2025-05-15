@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { TABS } from '../../constants';
 import SidebarChip from '../SidebarChip/SidebarChip';
@@ -15,6 +15,28 @@ function useOnKeydown(key, fn) {
   }, [fn]);
 }
 
+function useOnClickOutside(ref, fn) {
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        event.target instanceof Node &&
+        ref.current &&
+        !ref.current.contains(event.target)
+      ) {
+        fn();
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchevent', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchevent', handleClickOutside);
+    };
+  }, [fn]);
+}
+
 export default function Portal({
   setActiveView,
   activeTabObj,
@@ -22,10 +44,12 @@ export default function Portal({
   toggleShowPortal,
 }) {
   useOnKeydown('Escape', () => toggleShowPortal(false));
+  const contentRef = useRef(null);
+  useOnClickOutside(contentRef, () => toggleShowPortal(false));
 
   return createPortal(
     <div className="modal">
-      <div className="modal-content">
+      <div className="modal-content" ref={contentRef}>
         <span>Portal</span>
         <button onClick={() => toggleShowPortal(false)}>X</button>
         <ul>
