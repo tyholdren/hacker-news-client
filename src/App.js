@@ -29,8 +29,12 @@ function App() {
   }, [activeTabObj]);
 
   return (
-    <>
-      <NavBar showPortal={showPortal} toggleShowPortal={toggleShowPortal} />
+    <div>
+      <NavBar
+        setActiveTabObj={setActiveTabObj}
+        showPortal={showPortal}
+        toggleShowPortal={toggleShowPortal}
+      />
       <div className="App" style={{ display: 'flex', gap: '2rem' }}>
         {showPortal && (
           <Portal
@@ -76,7 +80,7 @@ function App() {
           <Footer content={footerData.content} links={footerData.links} />
         </main>
       </div>
-    </>
+    </div>
   );
 }
 

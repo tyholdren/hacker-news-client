@@ -1,6 +1,7 @@
 import { ReactComponent as HackerNewsIcon } from '../../static/icons/HackerNewsIcon.svg';
 import { TABS } from '../../constants.js';
 import SidebarChip from '../SidebarChip/SidebarChip.jsx';
+import { getTabFromValue } from '../../utils/getTabFromValue.js';
 
 export default function Sidebar({
   setActiveView,
@@ -15,7 +16,14 @@ export default function Sidebar({
         minHeight: '100vh',
       }}
     >
-      <HackerNewsIcon />
+      <button
+        onClick={() => {
+          const currentTab = getTabFromValue('new');
+          setActiveTabObj(currentTab);
+        }}
+      >
+        <HackerNewsIcon />
+      </button>
       <ul>
         {Object.values(TABS).map(({ id, icon, value }) => {
           return (
