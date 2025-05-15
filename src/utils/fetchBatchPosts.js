@@ -1,4 +1,4 @@
-import { URL_BASE } from '../constants';
+import { URL_BASE } from '@constants';
 
 export default async function fetchBatchPosts(postIds) {
   try {

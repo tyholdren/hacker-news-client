@@ -1,5 +1,5 @@
 import getPostComments from './getPostComments';
-import { getPostIdUrl } from '../constants';
+import { getPostIdUrl } from '@constants';
 
 export default async function getPostDetails(id, setTree, setIsLoading) {
   const path = getPostIdUrl(id);

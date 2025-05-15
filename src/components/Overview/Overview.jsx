@@ -1,4 +1,4 @@
-import { handleTabInit } from '../../utils';
+import { handleTabInit } from '@utils';
 import ListItem from '../ListItem/ListItem.jsx';
 import { DownArrowIcon } from '@icons';
 import Loading from '../Loading/Loading.jsx';

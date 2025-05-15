@@ -1,4 +1,4 @@
-import { getTimeDiff, parseHTML, sortByAscending } from '../../utils';
+import { getTimeDiff, parseHTML, sortByAscending } from '@utils';
 export default function Comment({ data }) {
   const { by, time, text, children = null } = data;
   if (text === undefined) return;

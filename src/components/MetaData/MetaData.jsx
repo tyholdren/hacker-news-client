@@ -1,5 +1,5 @@
 import { PointsIcon, AuthorIcon, CommentIcon, TimeIcon } from '@icons';
-import { isPlural } from '../../utils';
+import { isPlural } from '@utils';
 
 export default function MetaData({
   score,

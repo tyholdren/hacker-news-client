@@ -1,5 +1,5 @@
-import { VIEWS } from '../../constants';
-import { navigateTo } from '../../utils';
+import { VIEWS } from '@constants';
+import { navigateTo } from '@utils';
 export default function SidebarChip({
   id,
   icon,

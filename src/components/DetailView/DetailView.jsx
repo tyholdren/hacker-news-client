@@ -1,16 +1,15 @@
 import { useState, useEffect } from 'react';
-import { VIEWS } from '../../constants';
-import Comment from '../Comment/Comment';
+import { VIEWS } from '@constants';
+import Comment from '@components/Comment/Comment';
+import MetaData from '@components/MetaData/MetaData';
+import Loading from '@components/Loading/Loading';
 import {
   getTimeDiff,
   getPostDetails,
   parseHTML,
   sortByAscending,
   isPlural,
-} from '../../utils';
-
-import MetaData from '../MetaData/MetaData';
-import Loading from '../Loading/Loading';
+} from '@utils';
 
 export default function DetailView({ detailData, setActiveView }) {
   const [tree, setTree] = useState([]);

@@ -1,5 +1,5 @@
 import { HackerNewsIcon, HamburgerButton } from '@icons';
-import { navigateTo } from '../../utils';
+import { navigateTo } from '@utils';
 
 export default function NavBar({
   setActiveTabObj,
