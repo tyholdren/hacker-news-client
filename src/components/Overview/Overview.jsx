@@ -1,6 +1,6 @@
 import { handleTabInit } from '../../utils';
 import ListItem from '../ListItem/ListItem.jsx';
-import { ReactComponent as DownArrowIcon } from '../../static/icons/DownArrowIcon.svg';
+import { DownArrowIcon } from '@icons';
 import Loading from '../Loading/Loading.jsx';
 
 export default function Overview({

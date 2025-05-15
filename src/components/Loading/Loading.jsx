@@ -1,4 +1,4 @@
-import { ReactComponent as LoadingIcon } from '../../static/icons/LoadingIcon.svg';
+import { LoadingIcon } from '@icons';
 
 export default function Loading() {
   return (

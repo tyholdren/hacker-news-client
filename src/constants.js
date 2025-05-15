@@ -1,13 +1,14 @@
-import { ReactComponent as NewIcon } from '../src/static/icons/NewIcon.svg';
-import { ReactComponent as JobsIcon } from '../src/static/icons/JobsIcon.svg';
-import { ReactComponent as ShowIcon } from '../src/static/icons/ShowIcon.svg';
-import { ReactComponent as AskIcon } from '../src/static/icons/AskIcon.svg';
-
-import { ReactComponent as YoutubeIcon } from '../src/static/icons/YoutubeIcon.svg';
-import { ReactComponent as FacebookIcon } from '../src/static/icons/FacebookIcon.svg';
-import { ReactComponent as InstagramIcon } from '../src/static/icons/InstagramIcon.svg';
-import { ReactComponent as GithubIcon } from '../src/static/icons/GithubIcon.svg';
-import { ReactComponent as TwitterIcon } from '../src/static/icons/TwitterIcon.svg';
+import {
+  NewIcon,
+  JobsIcon,
+  ShowIcon,
+  AskIcon,
+  YoutubeIcon,
+  FacebookIcon,
+  InstagramIcon,
+  GithubIcon,
+  TwitterIcon,
+} from '@icons';
 
 export const SIZE = 10;
 const ID_BASE_START = 'https://hacker-news.firebaseio.com/v0/';

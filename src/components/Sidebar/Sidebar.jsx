@@ -1,4 +1,4 @@
-import { ReactComponent as HackerNewsIcon } from '../../static/icons/HackerNewsIcon.svg';
+import { HackerNewsIcon } from '@icons';
 import { TABS } from '../../constants.js';
 import SidebarChip from '../SidebarChip/SidebarChip.jsx';
 import { navigateTo } from '../../utils';

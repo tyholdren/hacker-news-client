@@ -1,5 +1,4 @@
-import { ReactComponent as HackerNewsIcon } from '../../static/icons/HackerNewsIcon.svg';
-import { ReactComponent as HamburgerButton } from '../../static/icons/HamburgerButton.svg';
+import { HackerNewsIcon, HamburgerButton } from '@icons';
 import { navigateTo } from '../../utils';
 
 export default function NavBar({

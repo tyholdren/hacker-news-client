@@ -1,13 +1,5 @@
-import { ReactComponent as PointsIcon } from '../../static/icons/PointsIcon.svg';
-import { ReactComponent as AuthorIcon } from '../../static/icons/AuthorIcon.svg';
-import { ReactComponent as CommentIcon } from '../../static/icons/CommentIcon.svg';
-import { ReactComponent as TimeIcon } from '../../static/icons/TimeIcon.svg';
+import { PointsIcon, AuthorIcon, CommentIcon, TimeIcon } from '@icons';
 import { isPlural } from '../../utils';
-
-// <button onClick={() => handleUpdate()}>
-// {' '}
-// {commentCount} comments
-// </button>
 
 export default function MetaData({
   score,
