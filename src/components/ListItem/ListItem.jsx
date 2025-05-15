@@ -1,3 +1,4 @@
+import './ListItem.css';
 import { VIEWS } from '../../constants';
 import formatUrl from '../../utils/formatUrl';
 import getTimeDiff from '../../utils/getTimeDiff';
@@ -27,7 +28,7 @@ export default function ListItem({
   const hasExternalLink = url;
 
   return (
-    <li key={id} style={{ marginBottom: '1rem' }}>
+    <li key={id} style={{ marginBottom: '1rem' }} className="list-item">
       {!hasExternalLink ? (
         <>
           <ArticleIcon />
@@ -50,7 +51,6 @@ export default function ListItem({
         metric={metric}
         commentCount={commentCount}
         isDetailView={false}
-        handleUpdate={handleUpdate}
       />
     </li>
   );

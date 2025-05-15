@@ -29,7 +29,8 @@ export default function DetailView({ detailData, setActiveView }) {
   }, []);
 
   const { metric, difference } = getTimeDiff(time);
-
+  // NOTE: if there is no text, we should only allow them to be redirected to
+  // an external link, no need to show detail view
   return (
     <div>
       <button onClick={() => setActiveView(VIEWS.OVERVIEW)}>Back</button>
@@ -43,8 +44,7 @@ export default function DetailView({ detailData, setActiveView }) {
           commentCount={commentCount}
           isDetailView={true}
         />
-
-        <div>{parseHTML(text)}</div>
+        {text && <div>{parseHTML(text)}</div>}
         <h4>
           {commentCount} comment{isPlural(commentCount)}
         </h4>

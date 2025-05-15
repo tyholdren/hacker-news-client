@@ -42,7 +42,6 @@ function App() {
         )}
 
         <Sidebar
-          className="sidebar"
           setActiveView={setActiveView}
           activeTabObj={activeTabObj}
           setActiveTabObj={setActiveTabObj}

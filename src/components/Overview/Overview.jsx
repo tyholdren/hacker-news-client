@@ -10,6 +10,8 @@ export default function Overview({
   setCache,
   setDetailData,
 }) {
+  // NOTE: WE DON'T NEED LOGIC FOR THE COMMENT BUTTON TO
+  // TAKE US TO THE DETAIL PAGE -- REMOVE THIS
   const { value, desc } = activeTabObj;
   const { data, startIndex, ids } = cacheState[activeTabObj.value] || {};
   return (
@@ -47,7 +49,6 @@ export default function Overview({
             }}
             disabled={startIndex >= ids.length}
             onClick={() => {
-              console.log({ cacheState });
               handleTabInit({
                 tab: activeTabObj,
                 cache: cacheState,

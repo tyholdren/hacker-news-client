@@ -4,6 +4,11 @@ import { ReactComponent as CommentIcon } from '../../static/icons/CommentIcon.sv
 import { ReactComponent as TimeIcon } from '../../static/icons/TimeIcon.svg';
 import isPlural from '../../utils/isPlural';
 
+// <button onClick={() => handleUpdate()}>
+// {' '}
+// {commentCount} comments
+// </button>
+
 export default function MetaData({
   score,
   author,
@@ -11,7 +16,6 @@ export default function MetaData({
   metric,
   commentCount,
   isDetailView,
-  handleUpdate,
 }) {
   return (
     <div style={{ display: 'flex', gap: '1rem' }}>
@@ -35,10 +39,7 @@ export default function MetaData({
         commentCount !== null ? (
           <div>
             <CommentIcon />
-            <button onClick={() => handleUpdate()}>
-              {' '}
-              {commentCount} comments
-            </button>
+            <span>{commentCount} comments</span>
           </div>
         ) : null
       ) : (
