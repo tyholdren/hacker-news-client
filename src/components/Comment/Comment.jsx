@@ -13,8 +13,7 @@ export default function Comment({ data }) {
       <p style={{ display: 'flex', gap: '1rem' }}>
         <b>{by}</b>
         <span>
-          {' '}
-          {difference} {metric} ago
+          •{difference} {metric} ago
         </span>
       </p>
       {parseHTML(text)}
