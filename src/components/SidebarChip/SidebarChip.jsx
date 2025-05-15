@@ -7,6 +7,7 @@ export default function SidebarChip({
   setActiveView,
   activeTabObj,
   setActiveTabObj,
+  toggleShowPortal = undefined,
 }) {
   return (
     <li key={id}>
@@ -16,6 +17,9 @@ export default function SidebarChip({
           backgroundColor: `${value === activeTabObj.value ? 'yellow' : ''}`,
         }}
         onClick={() => {
+          if (toggleShowPortal) {
+            toggleShowPortal(false);
+          }
           const currentTab = getTabFromValue(value);
           setActiveTabObj(currentTab);
           setActiveView(VIEWS.OVERVIEW);

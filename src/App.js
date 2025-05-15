@@ -32,7 +32,14 @@ function App() {
     <>
       <NavBar showPortal={showPortal} toggleShowPortal={toggleShowPortal} />
       <div className="App" style={{ display: 'flex', gap: '2rem' }}>
-        {showPortal && <Portal toggleShowPortal={toggleShowPortal} />}
+        {showPortal && (
+          <Portal
+            setActiveView={setActiveView}
+            activeTabObj={activeTabObj}
+            setActiveTabObj={setActiveTabObj}
+            toggleShowPortal={toggleShowPortal}
+          />
+        )}
 
         <Sidebar
           className="sidebar"
