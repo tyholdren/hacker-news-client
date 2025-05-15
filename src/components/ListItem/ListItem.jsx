@@ -1,7 +1,6 @@
 import './ListItem.css';
 import { VIEWS } from '../../constants';
-import formatUrl from '../../utils/formatUrl';
-import getTimeDiff from '../../utils/getTimeDiff';
+import { formatUrl, getTimeDiff } from '../../utils';
 import MetaData from '../MetaData/MetaData';
 import { ReactComponent as ArticleIcon } from '../../static/icons/ArticleIcon.svg';
 import { ReactComponent as ExternalIcon } from '../../static/icons/ExternalIcon.svg';

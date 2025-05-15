@@ -1,4 +1,4 @@
-import handleTabInit from '../../utils/handleTabInit.js';
+import { handleTabInit } from '../../utils';
 import ListItem from '../ListItem/ListItem.jsx';
 import { ReactComponent as DownArrowIcon } from '../../static/icons/DownArrowIcon.svg';
 import Loading from '../Loading/Loading.jsx';

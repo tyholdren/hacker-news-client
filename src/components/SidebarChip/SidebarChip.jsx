@@ -1,5 +1,5 @@
-import { getTabFromValue } from '../../utils/getTabFromValue';
 import { VIEWS } from '../../constants';
+import { navigateTo } from '../../utils';
 export default function SidebarChip({
   id,
   icon,
@@ -20,8 +20,8 @@ export default function SidebarChip({
           if (toggleShowPortal) {
             toggleShowPortal(false);
           }
-          const currentTab = getTabFromValue(value);
-          setActiveTabObj(currentTab);
+
+          navigateTo(value, setActiveTabObj);
           setActiveView(VIEWS.OVERVIEW);
         }}
       >

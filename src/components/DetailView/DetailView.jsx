@@ -1,36 +1,28 @@
 import { useState, useEffect } from 'react';
 import { VIEWS } from '../../constants';
-import getTimeDiff from '../../utils/getTimeDiff';
-import getPostDetails from '../../utils/getPostDetails';
-import parseHTML from '../../utils/parseHTML';
 import Comment from '../Comment/Comment';
-import sortByAscending from '../../utils/sortByAscending';
+import {
+  getTimeDiff,
+  getPostDetails,
+  parseHTML,
+  sortByAscending,
+  isPlural,
+} from '../../utils';
 
 import MetaData from '../MetaData/MetaData';
-import isPlural from '../../utils/isPlural';
 import Loading from '../Loading/Loading';
 
 export default function DetailView({ detailData, setActiveView }) {
   const [tree, setTree] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const {
-    id,
-    text,
-    title,
-    url,
-    author,
-    commentCount = 0,
-    score,
-    time,
-  } = detailData;
+  const { id, text, title, author, commentCount = 0, score, time } = detailData;
 
   useEffect(() => {
     getPostDetails(id, setTree, setIsLoading);
   }, []);
 
   const { metric, difference } = getTimeDiff(time);
-  // NOTE: if there is no text, we should only allow them to be redirected to
-  // an external link, no need to show detail view
+
   return (
     <div>
       <button onClick={() => setActiveView(VIEWS.OVERVIEW)}>Back</button>

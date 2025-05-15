@@ -4,7 +4,7 @@ import { footerData, TABS, VIEWS } from './constants.js';
 import Sidebar from './components/Sidebar/Sidebar';
 import Overview from './components/Overview/Overview.jsx';
 import DetailView from './components/DetailView/DetailView.jsx';
-import handleTabInit from './utils/handleTabInit';
+import { handleTabInit } from './utils';
 import Footer from '../src/components/Footer/Footer.jsx';
 import Loading from './components/Loading/Loading';
 import NavBar from './components/NavBar/NavBar';

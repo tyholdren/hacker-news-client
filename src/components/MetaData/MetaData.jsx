@@ -2,7 +2,7 @@ import { ReactComponent as PointsIcon } from '../../static/icons/PointsIcon.svg'
 import { ReactComponent as AuthorIcon } from '../../static/icons/AuthorIcon.svg';
 import { ReactComponent as CommentIcon } from '../../static/icons/CommentIcon.svg';
 import { ReactComponent as TimeIcon } from '../../static/icons/TimeIcon.svg';
-import isPlural from '../../utils/isPlural';
+import { isPlural } from '../../utils';
 
 // <button onClick={() => handleUpdate()}>
 // {' '}
