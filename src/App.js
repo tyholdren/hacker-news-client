@@ -1,6 +1,6 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import { TABS, VIEWS } from './constants.js';
+import { footerData, TABS, VIEWS } from './constants.js';
 import Sidebar from './components/Sidebar/Sidebar';
 import Overview from './components/Overview/Overview.jsx';
 import DetailView from './components/DetailView/DetailView.jsx';
@@ -55,7 +55,7 @@ function App() {
             <DetailView detailData={detailData} setActiveView={setActiveView} />
           )}
         </div>
-        <Footer />
+        <Footer content={footerData.content} links={footerData.links} />
       </main>
     </div>
   );

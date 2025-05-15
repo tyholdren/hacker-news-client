@@ -3,6 +3,12 @@ import { ReactComponent as JobsIcon } from '../src/static/icons/JobsIcon.svg';
 import { ReactComponent as ShowIcon } from '../src/static/icons/ShowIcon.svg';
 import { ReactComponent as AskIcon } from '../src/static/icons/AskIcon.svg';
 
+import { ReactComponent as YoutubeIcon } from '../src/static/icons/YoutubeIcon.svg';
+import { ReactComponent as FacebookIcon } from '../src/static/icons/FacebookIcon.svg';
+import { ReactComponent as InstagramIcon } from '../src/static/icons/InstagramIcon.svg';
+import { ReactComponent as GithubIcon } from '../src/static/icons/GithubIcon.svg';
+import { ReactComponent as TwitterIcon } from '../src/static/icons/TwitterIcon.svg';
+
 export const SIZE = 10;
 const ID_BASE_START = 'https://hacker-news.firebaseio.com/v0/';
 const ID_BASE_END = '.json?print=pretty';
@@ -52,4 +58,15 @@ export const TABS = {
     desc: 'Connect with top tech job opportunities an company hiring posts.',
     ids: JOB_STORIES_IDS,
   },
+};
+
+export const footerData = {
+  content: '© Hacker News, Inc. All rights reserved.',
+  links: [
+    <YoutubeIcon />,
+    <FacebookIcon />,
+    <InstagramIcon />,
+    <GithubIcon />,
+    <TwitterIcon />,
+  ],
 };
