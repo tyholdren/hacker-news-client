@@ -6,9 +6,9 @@ import { ReactComponent as TwitterIcon } from '../../static/icons/TwitterIcon.sv
 
 export default function Footer() {
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+    <footer style={{ display: 'flex', justifyContent: 'space-between' }}>
       <div>
-        <span>Hacker News, Inc. All rights reserved.</span>
+        <span>© Hacker News, Inc. All rights reserved.</span>
       </div>
       <div>
         <YoutubeIcon />
@@ -17,6 +17,6 @@ export default function Footer() {
         <GithubIcon />
         <TwitterIcon />
       </div>
-    </div>
+    </footer>
   );
 }
