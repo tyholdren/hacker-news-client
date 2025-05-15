@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react';
-import { VIEWS } from '@constants';
 import Comment from '@components/Comment/Comment';
-import MetaData from '@components/MetaData/MetaData';
 import Loading from '@components/Loading/Loading';
+import MetaData from '@components/MetaData/MetaData';
+import { VIEWS } from '@constants';
 import {
-  getTimeDiff,
   getPostDetails,
+  getTimeDiff,
+  isPlural,
   parseHTML,
   sortByAscending,
-  isPlural,
 } from '@utils';
+import { useEffect,useState } from 'react';
 
 export default function DetailView({ detailData, setActiveView }) {
   const [tree, setTree] = useState([]);
@@ -42,8 +42,8 @@ export default function DetailView({ detailData, setActiveView }) {
         {!isLoading ? (
           <ul>
             {tree.children &&
-              sortByAscending(tree.children, 'time').map(child => {
-                return <Comment data={child} />;
+              sortByAscending(tree.children, 'time').map((child, index) => {
+                return <Comment key={index} data={child} />;
               })}
           </ul>
         ) : (

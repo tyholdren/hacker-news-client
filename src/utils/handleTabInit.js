@@ -1,4 +1,5 @@
 import { SIZE } from '@constants';
+
 import fetchBatchPosts from './fetchBatchPosts';
 import fetchIds from './fetchIds';
 

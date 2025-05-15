@@ -1,6 +1,7 @@
+import { TABS } from '@constants';
 import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { TABS } from '@constants';
+
 import SidebarChip from '../SidebarChip/SidebarChip';
 
 function useOnKeydown(key, fn) {

@@ -1,14 +1,16 @@
 import './App.css';
-import { useState, useEffect } from 'react';
-import { footerData, TABS, VIEWS } from './constants.js';
-import { handleTabInit } from '@utils';
-import Sidebar from '@components/Sidebar/Sidebar';
-import Overview from '@components/Overview/Overview.jsx';
+
 import DetailView from '@components/DetailView/DetailView.jsx';
 import Footer from '@components/Footer/Footer.jsx';
 import Loading from '@components/Loading/Loading';
 import NavBar from '@components/NavBar/NavBar';
+import Overview from '@components/Overview/Overview.jsx';
 import Portal from '@components/Portal/Portal';
+import Sidebar from '@components/Sidebar/Sidebar';
+import { handleTabInit } from '@utils';
+import { useEffect,useState } from 'react';
+
+import { footerData, TABS, VIEWS } from './constants.js';
 
 function App() {
   const [activeView, setActiveView] = useState(VIEWS.OVERVIEW);

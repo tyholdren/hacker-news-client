@@ -16,8 +16,8 @@ export default function Comment({ data }) {
       {parseHTML(text)}
       {children && (
         <ul>
-          {sortByAscending(children, 'time').map(child => {
-            return <Comment data={child} />;
+          {sortByAscending(children, 'time').map((child, index) => {
+            return <Comment key={index} data={child} />;
           })}
         </ul>
       )}

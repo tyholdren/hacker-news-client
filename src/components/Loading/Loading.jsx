@@ -11,9 +11,9 @@ export default function Loading() {
       }}
     >
       <LoadingIcon />
-      <h3>Loading...</h3>
-      <span>Almost there! We're setting</span>
-      <span>everything up for you.</span>
+      <h3>{'Loading...'}</h3>
+      <span>{"Almost there! We're setting"}</span>
+      <span>{'everything up for you.'}</span>
     </div>
   );
 }

@@ -1,8 +1,10 @@
 import './ListItem.css';
+
 import { VIEWS } from '@constants';
-import { formatUrl, getTimeDiff } from '@utils';
-import MetaData from '../MetaData/MetaData';
 import { ArticleIcon, ExternalIcon } from '@icons';
+import { formatUrl, getTimeDiff } from '@utils';
+
+import MetaData from '../MetaData/MetaData';
 
 export default function ListItem({
   id,

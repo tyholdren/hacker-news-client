@@ -1,13 +1,13 @@
 import {
-  NewIcon,
-  JobsIcon,
-  ShowIcon,
   AskIcon,
-  YoutubeIcon,
   FacebookIcon,
-  InstagramIcon,
   GithubIcon,
+  InstagramIcon,
+  JobsIcon,
+  NewIcon,
+  ShowIcon,
   TwitterIcon,
+  YoutubeIcon,
 } from '@icons';
 
 export const SIZE = 10;
@@ -64,10 +64,10 @@ export const TABS = {
 export const footerData = {
   content: '© Hacker News, Inc. All rights reserved.',
   links: [
-    <YoutubeIcon />,
-    <FacebookIcon />,
-    <InstagramIcon />,
-    <GithubIcon />,
-    <TwitterIcon />,
+    <YoutubeIcon key={'YoutubeIcon'} />,
+    <FacebookIcon key={'FacebookIcon'} />,
+    <InstagramIcon key={'InstagramIcon'} />,
+    <GithubIcon key={'GithubIcon'} />,
+    <TwitterIcon key={'TwitterIcon'} />,
   ],
 };

@@ -1,7 +1,9 @@
-import { HackerNewsIcon } from '@icons';
 import { TABS } from '@constants';
-import SidebarChip from '../SidebarChip/SidebarChip.jsx';
+import { HackerNewsIcon } from '@icons';
 import { navigateTo } from '@utils';
+
+import SidebarChip from '../SidebarChip/SidebarChip.jsx';
+
 
 export default function Sidebar({
   setActiveView,

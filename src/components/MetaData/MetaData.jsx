@@ -1,4 +1,4 @@
-import { PointsIcon, AuthorIcon, CommentIcon, TimeIcon } from '@icons';
+import { AuthorIcon, CommentIcon, PointsIcon, TimeIcon } from '@icons';
 import { isPlural } from '@utils';
 
 export default function MetaData({

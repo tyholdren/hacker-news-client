@@ -1,7 +1,7 @@
-import { handleTabInit } from '@utils';
-import ListItem from '../ListItem/ListItem.jsx';
+import ListItem from '@components/ListItem/ListItem.jsx';
+import Loading from '@components/Loading/Loading.jsx';
 import { DownArrowIcon } from '@icons';
-import Loading from '../Loading/Loading.jsx';
+import { handleTabInit } from '@utils';
 
 export default function Overview({
   isLoading,
