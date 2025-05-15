@@ -59,6 +59,7 @@ function App() {
               <Loading />
             ) : activeView === VIEWS.OVERVIEW ? (
               <Overview
+                isLoading={isLoading}
                 setActiveView={setActiveView}
                 activeTabObj={activeTabObj}
                 cacheState={cache}

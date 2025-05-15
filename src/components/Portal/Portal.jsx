@@ -50,7 +50,6 @@ export default function Portal({
   return createPortal(
     <div className="modal">
       <div className="modal-content" ref={contentRef}>
-        <span>Portal</span>
         <button onClick={() => toggleShowPortal(false)}>X</button>
         <ul>
           {Object.values(TABS).map(({ id, icon, value }) => {
