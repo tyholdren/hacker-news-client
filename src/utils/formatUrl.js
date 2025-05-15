@@ -1,5 +1,9 @@
 export default function formatUrl(url) {
   return `(${
-    url.replaceAll('https://', '').replaceAll('www.', '').split('/')[0]
+    url
+      .replaceAll('https://', '')
+      .replaceAll('http://', '')
+      .replaceAll('www.', '')
+      .split('/')[0]
   })`;
 }

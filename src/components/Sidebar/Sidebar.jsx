@@ -8,9 +8,9 @@ export default function Sidebar({
   setActiveTabObj,
 }) {
   return (
-    <div>
+    <div style={{ borderRight: '1px solid black', minHeight: '100vh' }}>
       <HackerNewsIcon />
-      <ul className="nav-panel">
+      <ul>
         {Object.values(TABS).map(({ id, icon, value }) => {
           return (
             <SidebarChip

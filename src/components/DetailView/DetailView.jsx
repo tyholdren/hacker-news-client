@@ -13,8 +13,16 @@ import Loading from '../Loading/Loading';
 export default function DetailView({ detailData, setActiveView }) {
   const [tree, setTree] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const { id, text, title, url, author, commentCount, score, time } =
-    detailData;
+  const {
+    id,
+    text,
+    title,
+    url,
+    author,
+    commentCount = 0,
+    score,
+    time,
+  } = detailData;
 
   useEffect(() => {
     getPostDetails(id, setTree, setIsLoading);

@@ -18,7 +18,7 @@ export default function Overview({
         <>
           <h2>{value}</h2>
           <span>{desc}</span>
-          <ul>
+          <ul style={{ listStyleType: 'none' }}>
             {data.map(
               ({ id, text, title, url, by, descendants, score, time }) => {
                 return (
@@ -47,6 +47,7 @@ export default function Overview({
             }}
             disabled={startIndex >= ids.length}
             onClick={() => {
+              console.log({ cacheState });
               handleTabInit({
                 tab: activeTabObj,
                 cache: cacheState,
