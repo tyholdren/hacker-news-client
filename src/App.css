@@ -8,6 +8,40 @@
   box-sizing: inherit;
 }
 
-.nav-panel {
-  list-style-type: none;
+.sidebar {
+  display: none;
+}
+
+.navBar {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    display: block;
+  }
+  .navBar {
+    display: none;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 10rem;
+  height: 100vh;
+
+  background-color: white;
+  padding: 24px;
 }

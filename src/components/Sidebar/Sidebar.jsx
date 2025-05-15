@@ -8,7 +8,13 @@ export default function Sidebar({
   setActiveTabObj,
 }) {
   return (
-    <div style={{ borderRight: '1px solid black', minHeight: '100vh' }}>
+    <div
+      className="sidebar"
+      style={{
+        borderRight: '1px solid black',
+        minHeight: '100vh',
+      }}
+    >
       <HackerNewsIcon />
       <ul>
         {Object.values(TABS).map(({ id, icon, value }) => {
