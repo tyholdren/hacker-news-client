@@ -1,10 +1,9 @@
 import './ListItem.css';
 
+import MetaData from '@components/MetaData/MetaData';
 import { VIEWS } from '@constants';
 import { ArticleIcon, ExternalIcon } from '@icons';
 import { formatUrl, getTimeDiff } from '@utils';
-
-import MetaData from '../MetaData/MetaData';
 
 export default function ListItem({
   id,

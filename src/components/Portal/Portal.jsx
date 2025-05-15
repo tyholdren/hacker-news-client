@@ -1,8 +1,7 @@
+import SidebarChip from '@components/SidebarChip/SidebarChip';
 import { TABS } from '@constants';
 import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
-
-import SidebarChip from '../SidebarChip/SidebarChip';
 
 function useOnKeydown(key, fn) {
   useEffect(() => {
