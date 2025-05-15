@@ -7,6 +7,7 @@ import DetailView from './components/DetailView/DetailView.jsx';
 import handleTabInit from './utils/handleTabInit';
 import Footer from '../src/components/Footer/Footer.jsx';
 import Loading from './components/Loading/Loading';
+import NavBar from './components/NavBar/NavBar';
 
 function App() {
   const [activeView, setActiveView] = useState(VIEWS.OVERVIEW);
@@ -14,6 +15,7 @@ function App() {
   const [detailData, setDetailData] = useState({});
   const [cache, setCache] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [showSidebar, toggleShowSidebar] = useState(true);
 
   useEffect(() => {
     handleTabInit({
@@ -26,38 +28,46 @@ function App() {
   }, [activeTabObj]);
 
   return (
-    <div className="App" style={{ display: 'flex', gap: '2rem' }}>
-      <Sidebar
-        setActiveView={setActiveView}
-        activeTabObj={activeTabObj}
-        setActiveTabObj={setActiveTabObj}
-      />
-      <main
-        style={{
-          flex: 1,
-          display: 'flex',
-          flexDirection: 'column',
-          minHeight: '100vh',
-        }}
-      >
-        <div style={{ flex: 1 }}>
-          {isLoading ? (
-            <Loading />
-          ) : activeView === VIEWS.OVERVIEW ? (
-            <Overview
-              setActiveView={setActiveView}
-              activeTabObj={activeTabObj}
-              cacheState={cache}
-              setCache={setCache}
-              setDetailData={setDetailData}
-            />
-          ) : (
-            <DetailView detailData={detailData} setActiveView={setActiveView} />
-          )}
-        </div>
-        <Footer content={footerData.content} links={footerData.links} />
-      </main>
-    </div>
+    <>
+      <NavBar showSidebar={showSidebar} toggleShowSidebar={toggleShowSidebar} />
+      <div className="App" style={{ display: 'flex', gap: '2rem' }}>
+        {showSidebar && (
+          <Sidebar
+            setActiveView={setActiveView}
+            activeTabObj={activeTabObj}
+            setActiveTabObj={setActiveTabObj}
+          />
+        )}
+        <main
+          style={{
+            flex: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            minHeight: '100vh',
+          }}
+        >
+          <div style={{ flex: 1 }}>
+            {isLoading ? (
+              <Loading />
+            ) : activeView === VIEWS.OVERVIEW ? (
+              <Overview
+                setActiveView={setActiveView}
+                activeTabObj={activeTabObj}
+                cacheState={cache}
+                setCache={setCache}
+                setDetailData={setDetailData}
+              />
+            ) : (
+              <DetailView
+                detailData={detailData}
+                setActiveView={setActiveView}
+              />
+            )}
+          </div>
+          <Footer content={footerData.content} links={footerData.links} />
+        </main>
+      </div>
+    </>
   );
 }
 
