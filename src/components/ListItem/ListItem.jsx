@@ -4,7 +4,7 @@ import MetaData from '@components/MetaData/MetaData';
 import { VIEWS } from '@constants';
 import { ArticleIcon, ExternalIcon } from '@icons';
 import { formatUrl, getTimeDiff } from '@utils';
-
+import './ListItem.css';
 export default function ListItem({
   id,
   title,
@@ -25,32 +25,47 @@ export default function ListItem({
 
   const { metric, difference } = getTimeDiff(time);
   const hasExternalLink = url;
+  const icon = !hasExternalLink ? <ArticleIcon /> : <ExternalIcon />;
 
   return (
-    <li key={id} style={{ marginBottom: '1rem' }} className="list-item">
-      {!hasExternalLink ? (
-        <>
-          <ArticleIcon />
-          <button onClick={() => handleUpdate()}> {title}</button>
-        </>
-      ) : (
-        <>
-          <ExternalIcon />
-          <a href={url} target="_blank" rel="noopener noreferrer">
-            {title}
-          </a>
-        </>
-      )}
+    <li key={id} className="list-item">
+      <div>{icon}</div>
+      <div>
+        <div className="list-item__primary-content">
+          {!hasExternalLink ? (
+            <button
+              className="list-item__primary-content__title"
+              onClick={() => handleUpdate()}
+            >
+              {' '}
+              {title}
+            </button>
+          ) : (
+            <a
+              className="list-item__primary-content__title"
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {title}
+            </a>
+          )}
 
-      <span>{formattedUrl}</span>
-      <MetaData
-        score={score}
-        author={author}
-        difference={difference}
-        metric={metric}
-        commentCount={commentCount}
-        isDetailView={false}
-      />
+          <span className="list-item__primary-content__website">
+            {formattedUrl}
+          </span>
+        </div>
+        <div>
+          <MetaData
+            score={score}
+            author={author}
+            difference={difference}
+            metric={metric}
+            commentCount={commentCount}
+            isDetailView={false}
+          />
+        </div>
+      </div>
     </li>
   );
 }

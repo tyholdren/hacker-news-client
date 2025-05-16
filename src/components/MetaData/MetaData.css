@@ -1,0 +1,15 @@
+.meta-data__item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.meta-data__item__text {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--grey-400);
+}
+
+.meta-data__item__text span {
+  color: var(--orange-200);
+}

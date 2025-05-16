@@ -1,6 +1,6 @@
 import { AuthorIcon, CommentIcon, PointsIcon, TimeIcon } from '@icons';
 import { isPlural } from '@utils';
-
+import './MetaData.css';
 export default function MetaData({
   score,
   author,
@@ -11,31 +11,33 @@ export default function MetaData({
 }) {
   return (
     <div style={{ display: 'flex', gap: '1rem' }}>
-      <div>
+      <div className="meta-data__item">
         <PointsIcon />
-        <span>{score} points</span>
+        <span className="meta-data__item__text">{score} points</span>
       </div>
-      <div>
+      <div className="meta-data__item">
         <AuthorIcon />
-        <span>
-          {!isDetailView ? 'by' : ''} {author}
+        <span className="meta-data__item__text">
+          {!isDetailView ? 'by' : ''} <span>{author}</span>
         </span>
       </div>
-      <div>
+      <div className="meta-data__item">
         <TimeIcon />
-        <span>
+        <span className="meta-data__item__text">
           {difference} {metric} ago
         </span>
       </div>
       {!isDetailView ? (
         commentCount !== null ? (
-          <div>
+          <div className="meta-data__item">
             <CommentIcon />
-            <span>{commentCount} comments</span>
+            <span className="meta-data__item__text">
+              {commentCount} comments
+            </span>
           </div>
         ) : null
       ) : (
-        <div>
+        <div className="meta-data__item">
           <CommentIcon />
           <span>
             {commentCount} comment{isPlural(commentCount)}

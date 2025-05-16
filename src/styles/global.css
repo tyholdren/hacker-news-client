@@ -19,7 +19,8 @@
   --grey-100: #e5e5e5;
   --grey-200: #a3a3a3;
   --grey-300: #525252;
-  --grey-400: #404040;
+  --grey-400: #6b7280;
+  --grey-500: #404040;
 
   --orange-100: #fff7ed;
   --orange-200: #f97316;
@@ -99,6 +100,11 @@
 
 button:hover {
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black-200);
 }
 
 ul {

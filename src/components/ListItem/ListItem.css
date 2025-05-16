@@ -1,3 +1,28 @@
 .list-item:hover {
-  background-color: yellow;
+  background-color: var(--orange-100);
+}
+
+.list-item {
+  height: 92px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  display: flex;
+  gap: 16px;
+}
+
+.list-item__primary-content {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.list-item__primary-content__title {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.list-item__primary-content__website {
+  color: var(--grey-400);
+  font-size: var(--font-size-xs);
 }
