@@ -11,10 +11,41 @@
 .portal-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 10rem;
+  align-items: flex-start;
+  width: 15rem;
   height: 100vh;
 
   background-color: white;
-  padding: 24px;
+  padding: 24px 16px;
+}
+
+.portal-content ul {
+  width: 100%;
+}
+
+.portal-content__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 64px;
+  padding: 16px 4px;
+}
+
+.portal-content__header__icon {
+  background-color: white;
+  border: none;
+  font-size: 16px;
+}
+
+.portal-content__header button {
+  width: 20px;
+  height: 20px;
+  padding: 2.5px;
+  border: 1px solid var(--white-100);
+  background-color: var(--white-100);
+}
+
+.portal-content__header button:hover {
+  border: 1px solid var(--grey-400);
 }

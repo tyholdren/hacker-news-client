@@ -11,7 +11,6 @@ export default function SidebarChip({
   setActiveTabObj,
   toggleShowPortal = undefined,
 }) {
-  console.log(value === activeTabObj.value, { value });
   return (
     <li key={id} className="sidebar__chip">
       <button

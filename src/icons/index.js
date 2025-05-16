@@ -18,3 +18,4 @@ export { ReactComponent as ShowIcon } from './ShowIcon.svg';
 export { ReactComponent as TimeIcon } from './TimeIcon.svg';
 export { ReactComponent as TwitterIcon } from './TwitterIcon.svg';
 export { ReactComponent as YoutubeIcon } from './YoutubeIcon.svg';
+export { ReactComponent as XIcon } from './XIcon.svg';

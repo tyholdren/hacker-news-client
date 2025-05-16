@@ -1,7 +1,10 @@
 import SidebarChip from '@components/SidebarChip/SidebarChip';
 import { TABS } from '@constants';
+import { HackerNewsIcon } from '@icons';
 import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
+import { XIcon } from '@icons';
+
 import './Portal.css';
 function useOnKeydown(key, fn) {
   useEffect(() => {
@@ -50,7 +53,12 @@ export default function Portal({
   return createPortal(
     <div className="portal">
       <div className="portal-content" ref={contentRef}>
-        <button onClick={() => toggleShowPortal(false)}>X</button>
+        <div className="portal-content__header">
+          <HackerNewsIcon className="portal-content__header__icon" />
+          <button onClick={() => toggleShowPortal(false)}>
+            <XIcon />
+          </button>
+        </div>
         <ul>
           {Object.values(TABS).map(({ id, icon, value }) => {
             return (
