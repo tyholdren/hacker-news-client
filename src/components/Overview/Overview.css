@@ -1,6 +1,5 @@
 .overview {
-  padding-left: 64px;
-  min-height: calc(100% - 29px);
+  padding: 0px 64px;
 }
 
 .overview__title {
@@ -27,4 +26,5 @@
   color: var(--button-secondary-fg);
   border: 1px solid var(--white-200);
   box-shadow: var(--shadow-default);
+  margin: 24px 0px;
 }

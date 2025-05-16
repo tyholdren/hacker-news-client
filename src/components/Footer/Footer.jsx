@@ -1,10 +1,12 @@
+import './Footer.css';
+
 export default function Footer({ content, links }) {
   return (
-    <footer style={{ display: 'flex', justifyContent: 'space-between' }}>
+    <footer>
       <div>
         <span>{content}</span>
       </div>
-      <div>
+      <div className="footer__links">
         {links.map(link => {
           return link;
         })}
