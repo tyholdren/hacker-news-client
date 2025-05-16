@@ -11,7 +11,10 @@ export default function NavBar({
       className="navBar"
       style={{ height: '3rem', borderBottom: '1px solid black' }}
     >
-      <button onClick={() => navigateTo('new', setActiveTabObj)}>
+      <button
+        // className="hacker-news-icon"
+        onClick={() => navigateTo('new', setActiveTabObj)}
+      >
         <HackerNewsIcon />
       </button>
       <button onClick={() => toggleShowPortal(!showPortal)}>

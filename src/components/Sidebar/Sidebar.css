@@ -1,0 +1,13 @@
+.sidebar {
+  width: 194px;
+  height: '100vh';
+  padding: var(--space-2xl) var(--space-lg);
+  border-right: 1px solid var(--grey-100);
+}
+
+.hacker-news-icon {
+  background-color: white;
+  border: none;
+  padding: 16px 24px 16px 4px;
+  font-size: 16px;
+}

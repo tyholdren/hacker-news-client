@@ -16,14 +16,14 @@
   display: block;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .sidebar {
     display: block;
   }
   .navBar {
     display: none;
   }
-}
+} */
 
 .modal {
   position: fixed;

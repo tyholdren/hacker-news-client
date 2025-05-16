@@ -3,20 +3,19 @@ import { TABS } from '@constants';
 import { HackerNewsIcon } from '@icons';
 import { navigateTo } from '@utils';
 
+import './Sidebar.css';
+
 export default function Sidebar({
   setActiveView,
   activeTabObj,
   setActiveTabObj,
 }) {
   return (
-    <div
-      className="sidebar"
-      style={{
-        borderRight: '1px solid black',
-        minHeight: '100vh',
-      }}
-    >
-      <button onClick={() => navigateTo('new', setActiveTabObj)}>
+    <div className="sidebar">
+      <button
+        className="hacker-news-icon"
+        onClick={() => navigateTo('new', setActiveTabObj)}
+      >
         <HackerNewsIcon />
       </button>
       <ul>

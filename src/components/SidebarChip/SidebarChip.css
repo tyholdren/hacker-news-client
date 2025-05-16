@@ -1,0 +1,24 @@
+.sidebar__chip {
+  display: flex;
+}
+
+.sidebar__chip__btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 2rem;
+  border: none;
+  color: var(--black-100);
+  background-color: var(--white-100);
+  margin-bottom: 4px;
+  padding: 6px;
+  gap: 12px;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-sm);
+}
+
+.sidebar__chip__btn--selected {
+  border: none;
+  color: var(--orange-300);
+  background-color: var(--orange-100);
+}
