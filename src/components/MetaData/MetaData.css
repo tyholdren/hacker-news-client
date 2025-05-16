@@ -1,12 +1,12 @@
 .meta-data__item {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-xs);
 }
 
 .meta-data__item__text {
-  font-size: 12px;
-  line-height: 16px;
+  font-size: var(--font-size-xs);
+  line-height: var(--font-size-base);
   color: var(--grey-400);
 }
 

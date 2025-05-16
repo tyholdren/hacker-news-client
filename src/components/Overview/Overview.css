@@ -16,3 +16,14 @@
   line-height: var(--line-height-base);
   color: var(--grey-400);
 }
+
+.load-more__btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 10px 14px 10px 14px;
+  background-color: var(--button-secondary-bg);
+  color: var(--button-secondary-fg);
+  border: 1px solid var(--white-200);
+  box-shadow: var(--shadow-default);
+}

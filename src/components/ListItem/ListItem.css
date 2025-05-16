@@ -22,6 +22,16 @@
   line-height: 20px;
 }
 
+.list-item__primary-content__btn {
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  line-height: 20px;
+}
+.list-item__primary-content__btn:hover {
+  background-color: transparent;
+}
+
 .list-item__primary-content__website {
   color: var(--grey-400);
   font-size: var(--font-size-xs);

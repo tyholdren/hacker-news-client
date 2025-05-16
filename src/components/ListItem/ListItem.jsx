@@ -34,7 +34,7 @@ export default function ListItem({
         <div className="list-item__primary-content">
           {!hasExternalLink ? (
             <button
-              className="list-item__primary-content__title"
+              className="list-item__primary-content__btn"
               onClick={() => handleUpdate()}
             >
               {' '}

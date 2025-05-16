@@ -48,11 +48,7 @@ export default function Overview({
         })}
       </ul>
       <button
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        }}
+        className="load-more__btn"
         disabled={startIndex >= ids.length}
         onClick={() => {
           handleTabInit({
