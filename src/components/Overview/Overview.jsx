@@ -3,6 +3,8 @@ import Loading from '@components/Loading/Loading.jsx';
 import { DownArrowIcon } from '@icons';
 import { handleTabInit } from '@utils';
 
+import './Overview.css';
+
 export default function Overview({
   isLoading,
   setActiveView,
@@ -23,10 +25,10 @@ export default function Overview({
   } = cacheState[activeTabObj.value] || {};
 
   return (
-    <div>
-      <h2>{value}</h2>
-      <span>{desc}</span>
-      <ul style={{ listStyleType: 'none' }}>
+    <div className="overview">
+      <h2 className="overview__title">{value}</h2>
+      <p className="overview__desc">{desc}</p>
+      <ul>
         {data.map(({ id, text, title, url, by, descendants, score, time }) => {
           return (
             <ListItem

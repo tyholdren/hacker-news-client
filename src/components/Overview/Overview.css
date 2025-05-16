@@ -1,0 +1,18 @@
+.overview {
+  padding-left: 64px;
+}
+
+.overview__title {
+  padding-top: var(--space-4xl);
+  margin-bottom: var(--space-sm);
+  font-size: var(--space-2xl);
+  line-height: var(--line-height-2xl);
+  color: var(--black-200);
+}
+
+.overview__desc {
+  padding-bottom: var(--space-4xl);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+  color: var(--grey-200);
+}

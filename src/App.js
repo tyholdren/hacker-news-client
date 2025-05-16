@@ -35,7 +35,7 @@ function App() {
         showPortal={showPortal}
         toggleShowPortal={toggleShowPortal}
       />
-      <div className="App" style={{ display: 'flex', gap: '2rem' }}>
+      <div className="App" style={{ display: 'flex' }}>
         {showPortal && (
           <Portal
             setActiveView={setActiveView}
