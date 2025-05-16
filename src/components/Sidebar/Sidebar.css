@@ -8,6 +8,6 @@
 .hacker-news-icon {
   background-color: white;
   border: none;
-  padding: 16px 24px 16px 4px;
-  font-size: 16px;
+  padding: var(--space-lg) var(--space-2xl) var(--space-lg) var(--space-xs);
+  font-size: var(--font-size-base);
 }

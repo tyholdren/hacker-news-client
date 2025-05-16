@@ -4,29 +4,29 @@
 
 .list-item {
   height: 92px;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
   display: flex;
-  gap: 16px;
+  gap: var(--space-lg);
 }
 
 .list-item__primary-content {
   display: flex;
-  gap: 4px;
+  gap: var(--space-xs);
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: var(--space-sm);
 }
 
 .list-item__primary-content__title {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-sm);
 }
 
 .list-item__primary-content__btn {
   background-color: transparent;
   border: none;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-sm);
 }
 .list-item__primary-content__btn:hover {
   background-color: transparent;

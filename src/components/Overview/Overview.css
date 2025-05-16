@@ -26,5 +26,5 @@
   color: var(--button-secondary-fg);
   border: 1px solid var(--white-200);
   box-shadow: var(--shadow-default);
-  margin: 24px 0px;
+  margin: var(--space-2xl) var(--space-0);
 }

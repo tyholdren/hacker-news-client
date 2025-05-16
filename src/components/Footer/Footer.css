@@ -1,10 +1,10 @@
 footer {
   display: flex;
   justify-content: space-between;
-  margin: 32px 64px;
+  margin: var(--space-4xl) 64px;
 }
 
 .footer__links {
   display: flex;
-  gap: 24px;
+  gap: var(--space-2xl);
 }

@@ -53,12 +53,13 @@ export default function Portal({
   return createPortal(
     <div className="portal">
       <div className="portal-content" ref={contentRef}>
-        <div className="portal-content__header">
+        <button
+          className="portal-content__header"
+          onClick={() => toggleShowPortal(false)}
+        >
           <HackerNewsIcon className="portal-content__header__icon" />
-          <button onClick={() => toggleShowPortal(false)}>
-            <XIcon />
-          </button>
-        </div>
+          <XIcon />
+        </button>
         <ul>
           {Object.values(TABS).map(({ id, icon, value }) => {
             return (
