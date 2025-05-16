@@ -1,5 +1,6 @@
 .overview {
   padding-left: 64px;
+  min-height: calc(100% - 29px);
 }
 
 .overview__title {

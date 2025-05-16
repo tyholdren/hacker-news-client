@@ -1,54 +1,33 @@
-.sidebar {
-  display: none;
-}
-
-.navBar {
-  display: block;
-}
-
-/* @media (min-width: 768px) {
-  .sidebar {
-    display: block;
-  }
-  .navBar {
-    display: none;
-  }
-} */
-/* 
 html,
 body {
   height: 100%;
   margin: 0;
 }
 
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .app {
   display: flex;
   flex-direction: column;
+  flex: 1;
   min-height: 100vh;
 }
 
-.App {
+.app__layout {
   display: flex;
   flex: 1;
-} */
-
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
 }
 
-.modal-content {
+.app__main {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 10rem;
-  height: 100vh;
+  flex: 1;
+}
 
-  background-color: white;
-  padding: 24px;
+.app__content {
+  flex: 1;
 }

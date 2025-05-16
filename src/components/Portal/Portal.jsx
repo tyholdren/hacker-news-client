@@ -2,7 +2,7 @@ import SidebarChip from '@components/SidebarChip/SidebarChip';
 import { TABS } from '@constants';
 import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
-
+import './Portal.css';
 function useOnKeydown(key, fn) {
   useEffect(() => {
     function handleKeydown(event) {
@@ -48,8 +48,8 @@ export default function Portal({
   useOnClickOutside(contentRef, () => toggleShowPortal(false));
 
   return createPortal(
-    <div className="modal">
-      <div className="modal-content" ref={contentRef}>
+    <div className="portal">
+      <div className="portal-content" ref={contentRef}>
         <button onClick={() => toggleShowPortal(false)}>X</button>
         <ul>
           {Object.values(TABS).map(({ id, icon, value }) => {

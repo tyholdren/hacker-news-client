@@ -7,8 +7,9 @@ import Portal from '@components/Portal/Portal';
 import Sidebar from '@components/Sidebar/Sidebar';
 import { handleTabInit } from '@utils';
 import { useEffect, useState } from 'react';
-
 import { footerData, TABS, VIEWS } from './constants.js';
+
+import './App.css';
 
 function App() {
   const [activeView, setActiveView] = useState(VIEWS.OVERVIEW);
@@ -29,13 +30,13 @@ function App() {
   }, [activeTabObj]);
 
   return (
-    <div>
+    <div className="app">
       <NavBar
         setActiveTabObj={setActiveTabObj}
         showPortal={showPortal}
         toggleShowPortal={toggleShowPortal}
       />
-      <div className="App" style={{ display: 'flex' }}>
+      <div className="app__layout">
         {showPortal && (
           <Portal
             setActiveView={setActiveView}
@@ -50,15 +51,8 @@ function App() {
           activeTabObj={activeTabObj}
           setActiveTabObj={setActiveTabObj}
         />
-        <main
-          style={{
-            flex: 1,
-            display: 'flex',
-            flexDirection: 'column',
-            minHeight: '100vh',
-          }}
-        >
-          <div style={{ flex: 1 }}>
+        <main className="app__main">
+          <div className="app__content">
             {isLoading ? (
               <Loading />
             ) : activeView === VIEWS.OVERVIEW ? (

@@ -102,6 +102,34 @@
   font-size: 16px;
 } */
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  display: none;
+}
+
+.navBar {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    display: block;
+  }
+  .navBar {
+    display: none;
+  }
+}
+
 button:hover {
   cursor: pointer;
 }
