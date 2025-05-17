@@ -10,7 +10,7 @@ import {
   YoutubeIcon,
 } from '@icons';
 
-export const SIZE = 10;
+export const SIZE = 8;
 const ID_BASE_START = 'https://hacker-news.firebaseio.com/v0/';
 const ID_BASE_END = '.json?print=pretty';
 

@@ -1,11 +1,14 @@
+import './Portal.css';
+
 import SidebarChip from '@components/SidebarChip/SidebarChip';
 import { TABS } from '@constants';
-import { HackerNewsIcon } from '@icons';
+import { HackerNewsIcon , XIcon } from '@icons';
 import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { XIcon } from '@icons';
 
-import './Portal.css';
+import { ACTIONS } from '../../state/appReducer';
+
+// NOTE: MOVE THESE HOOKS OUTSIDE INTO A HOOKS FOLDER
 function useOnKeydown(key, fn) {
   useEffect(() => {
     function handleKeydown(event) {
@@ -40,22 +43,19 @@ function useOnClickOutside(ref, fn) {
   }, [fn]);
 }
 
-export default function Portal({
-  setActiveView,
-  activeTabObj,
-  setActiveTabObj,
-  toggleShowPortal,
-}) {
-  useOnKeydown('Escape', () => toggleShowPortal(false));
+export default function Portal({ state, dispatch }) {
+  useOnKeydown('Escape', () => dispatch({ type: ACTIONS.TOGGLE_PORTAL }));
   const contentRef = useRef(null);
-  useOnClickOutside(contentRef, () => toggleShowPortal(false));
+  useOnClickOutside(contentRef, () =>
+    dispatch({ type: ACTIONS.TOGGLE_PORTAL })
+  );
 
   return createPortal(
     <div className="portal">
       <div className="portal-content" ref={contentRef}>
         <button
           className="portal-content__header"
-          onClick={() => toggleShowPortal(false)}
+          onClick={() => dispatch({ type: ACTIONS.TOGGLE_PORTAL })}
         >
           <HackerNewsIcon className="portal-content__header__icon" />
           <XIcon />
@@ -68,10 +68,8 @@ export default function Portal({
                 id={id}
                 icon={icon}
                 value={value}
-                setActiveView={setActiveView}
-                activeTabObj={activeTabObj}
-                setActiveTabObj={setActiveTabObj}
-                toggleShowPortal={toggleShowPortal}
+                state={state}
+                dispatch={dispatch}
               />
             );
           })}

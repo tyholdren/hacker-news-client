@@ -1,20 +1,32 @@
+import { TABS, VIEWS } from '@constants';
 import { HackerNewsIcon, HamburgerButton } from '@icons';
-import { navigateTo } from '@utils';
 
-export default function NavBar({
-  setActiveTabObj,
-  showPortal,
-  toggleShowPortal,
-}) {
+import { ACTIONS } from '../../state/appReducer';
+
+export default function NavBar({ dispatch }) {
   return (
     <div className="navBar">
       <button
-        // className="hacker-news-icon"
-        onClick={() => navigateTo('new', setActiveTabObj)}
+        className="hacker-news-icon"
+        onClick={() =>
+          dispatch({
+            type: ACTIONS.SET_ACTIVE_VIEW,
+            payload: {
+              activeView: VIEWS.OVERVIEW,
+              activeTab: TABS.NEW,
+            },
+          })
+        }
       >
         <HackerNewsIcon />
       </button>
-      <button onClick={() => toggleShowPortal(!showPortal)}>
+      <button
+        onClick={() =>
+          dispatch({
+            type: ACTIONS.TOGGLE_PORTAL,
+          })
+        }
+      >
         <HamburgerButton />
       </button>
     </div>

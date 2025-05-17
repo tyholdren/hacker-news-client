@@ -1,6 +1,7 @@
+import './MetaData.css';
+
 import { AuthorIcon, CommentIcon, PointsIcon, TimeIcon } from '@icons';
 import { isPlural } from '@utils';
-import './MetaData.css';
 export default function MetaData({
   score,
   author,

@@ -4,7 +4,8 @@ import MetaData from '@components/MetaData/MetaData';
 import { VIEWS } from '@constants';
 import { ArticleIcon, ExternalIcon } from '@icons';
 import { formatUrl, getTimeDiff } from '@utils';
-import './ListItem.css';
+
+import { ACTIONS } from '../../state/appReducer';
 export default function ListItem({
   id,
   title,
@@ -14,13 +15,19 @@ export default function ListItem({
   commentCount = null,
   score,
   time,
-  setActiveView,
-  setDetailData,
+  dispatch,
 }) {
   const formattedUrl = url ? formatUrl(url) : null;
-  const handleUpdate = () => {
-    setActiveView(VIEWS.DETAIL_VIEW);
-    setDetailData({ id, text, title, url, author, commentCount, score, time });
+
+  const showDetail = () => {
+    dispatch({
+      type: ACTIONS.SET_ACTIVE_VIEW,
+      payload: { activeView: VIEWS.DETAIL_VIEW },
+    });
+    dispatch({
+      type: ACTIONS.SET_DETAIL_DATA,
+      payload: { id, title, text, url, author, commentCount, score, time },
+    });
   };
 
   const { metric, difference } = getTimeDiff(time);
@@ -35,7 +42,7 @@ export default function ListItem({
           {!hasExternalLink ? (
             <button
               className="list-item__primary-content__btn"
-              onClick={() => handleUpdate()}
+              onClick={() => showDetail()}
             >
               {' '}
               {title}

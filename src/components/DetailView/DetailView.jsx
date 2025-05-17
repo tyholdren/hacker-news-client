@@ -2,19 +2,24 @@ import Comment from '@components/Comment/Comment';
 import Loading from '@components/Loading/Loading';
 import MetaData from '@components/MetaData/MetaData';
 import { VIEWS } from '@constants';
-import {
-  getPostDetails,
-  getTimeDiff,
-  isPlural,
-  parseHTML,
-  sortByAscending,
-} from '@utils';
-import { useEffect,useState } from 'react';
+import { getTimeDiff, isPlural, parseHTML, sortByAscending } from '@utils';
+import getPostDetails from '@utils/getPostDetails';
+import { useEffect, useState } from 'react';
 
-export default function DetailView({ detailData, setActiveView }) {
+import { ACTIONS } from '../../state/appReducer';
+
+export default function DetailView({ state, dispatch }) {
   const [tree, setTree] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const { id, text, title, author, commentCount = 0, score, time } = detailData;
+  const {
+    id,
+    text,
+    title,
+    author,
+    commentCount = 0,
+    score,
+    time,
+  } = state.detailData;
 
   useEffect(() => {
     getPostDetails(id, setTree, setIsLoading);
@@ -24,7 +29,16 @@ export default function DetailView({ detailData, setActiveView }) {
 
   return (
     <div>
-      <button onClick={() => setActiveView(VIEWS.OVERVIEW)}>Back</button>
+      <button
+        onClick={() =>
+          dispatch({
+            type: ACTIONS.SET_ACTIVE_VIEW,
+            payload: { activeView: VIEWS.OVERVIEW, activeTab: state.activeTab },
+          })
+        }
+      >
+        Back
+      </button>
       <div style={{ marginLeft: '5rem' }}>
         <h1>{title}</h1>
         <MetaData
