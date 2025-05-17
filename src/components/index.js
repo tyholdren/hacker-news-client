@@ -1,11 +1,11 @@
+export { default as Comment } from './Comment/Comment.jsx';
 export { default as DetailView } from './DetailView/DetailView.jsx';
 export { default as Footer } from './Footer/Footer.jsx';
+export { default as ListItem } from './ListItem/ListItem.jsx';
 export { default as Loading } from './Loading/Loading.jsx';
+export { default as MetaData } from './MetaData/MetaData.jsx';
 export { default as NavBar } from './NavBar/NavBar.jsx';
 export { default as Overview } from './Overview/Overview.jsx';
 export { default as Portal } from './Portal/Portal.jsx';
 export { default as Sidebar } from './Sidebar/Sidebar.jsx';
 export { default as SidebarChip } from './SidebarChip/SidebarChip.jsx';
-export { default as MetaData } from './MetaData/MetaData.jsx';
-export { default as Comment } from './Comment/Comment.jsx';
-export { default as ListItem } from './ListItem/ListItem.jsx';

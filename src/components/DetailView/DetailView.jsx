@@ -1,7 +1,6 @@
 import { Comment, Loading, MetaData } from '@components';
 import { VIEWS } from '@constants';
-import { getTimeDiff, isPlural, parseHTML, sortByAscending } from '@utils';
-import { getPostDetails } from '@utils';
+import { getPostDetails,getTimeDiff, isPlural, parseHTML, sortByAscending  } from '@utils';
 import { useEffect, useState } from 'react';
 
 import { ACTIONS } from '../../state/appReducer';

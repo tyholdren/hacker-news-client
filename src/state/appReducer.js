@@ -1,5 +1,12 @@
 import { TABS, VIEWS } from '@constants';
 
+export const defaultTabInitConfig = {
+  tab: TABS.NEW,
+  cache: {},
+  startIndex: 0,
+  isLoadingMore: false,
+};
+
 export const ACTIONS = {
   FETCH_START: 'fetch-start',
   FETCH_SUCCESS: 'fetch-success',

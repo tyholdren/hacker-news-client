@@ -1,4 +1,5 @@
 import './App.css';
+
 import {
   DetailView,
   Footer,
@@ -12,18 +13,19 @@ import { footerData, VIEWS } from '@constants';
 import { handleTabInit } from '@utils';
 import { useEffect, useReducer } from 'react';
 
-import { initialState, reducer } from './state/appReducer.js';
+import {
+  defaultTabInitConfig,
+  initialState,
+  reducer,
+} from './state/appReducer.js';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
     handleTabInit({
-      tab: state.activeTab,
-      cache: state.cache,
+      ...defaultTabInitConfig,
       dispatch,
-      startIndex: 0,
-      isLoadingMore: false,
     });
   }, []);
 
