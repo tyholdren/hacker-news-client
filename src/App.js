@@ -11,7 +11,7 @@ import { footerData, VIEWS } from '@constants';
 import { handleTabInit } from '@utils';
 import { useEffect, useReducer } from 'react';
 
-import { initialState,reducer } from './state/appReducer.js';
+import { initialState, reducer } from './state/appReducer.js';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);

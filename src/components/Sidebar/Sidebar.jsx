@@ -1,26 +1,27 @@
-// import { navigateTo } from '@utils';
 import './Sidebar.css';
 
 import SidebarChip from '@components/SidebarChip/SidebarChip.jsx';
-import { TABS } from '@constants';
+import { TABS, VIEWS } from '@constants';
 import { HackerNewsIcon } from '@icons';
+import { ACTIONS } from '../../state/appReducer';
 
-export default function Sidebar({
-  // setActiveView,
-  // activeTabObj,
-  // setActiveTabObj,
-  state,
-  dispatch,
-}) {
-  // <button
-  //   className="hacker-news-icon"
-  //   onClick={() => navigateTo('new', setActiveTabObj)}
-  // >
-  // <HackerNewsIcon />
-  // </button>
+export default function Sidebar({ state, dispatch }) {
   return (
     <div className="sidebar">
-      <HackerNewsIcon />
+      <button
+        className="hacker-news-icon"
+        onClick={() =>
+          dispatch({
+            type: ACTIONS.SET_ACTIVE_VIEW,
+            payload: {
+              activeView: VIEWS.OVERVIEW,
+              activeTab: TABS.NEW,
+            },
+          })
+        }
+      >
+        <HackerNewsIcon />
+      </button>
       <ul>
         {Object.values(TABS).map(({ id, icon, value }) => {
           return (
@@ -38,35 +39,3 @@ export default function Sidebar({
     </div>
   );
 }
-
-// export default function Sidebar({
-//   setActiveView,
-//   activeTabObj,
-//   setActiveTabObj,
-// }) {
-//   return (
-//     <div className="sidebar">
-//       <button
-//         className="hacker-news-icon"
-//         onClick={() => navigateTo('new', setActiveTabObj)}
-//       >
-//         <HackerNewsIcon />
-//       </button>
-//       <ul>
-//         {Object.values(TABS).map(({ id, icon, value }) => {
-//           return (
-//             <SidebarChip
-//               key={id}
-//               id={id}
-//               icon={icon}
-//               value={value}
-//               setActiveView={setActiveView}
-//               activeTabObj={activeTabObj}
-//               setActiveTabObj={setActiveTabObj}
-//             />
-//           );
-//         })}
-//       </ul>
-//     </div>
-//   );
-// }
