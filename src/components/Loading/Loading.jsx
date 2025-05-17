@@ -1,5 +1,6 @@
 import { LoadingIcon } from '@icons';
-
+// NOTE: UPDATE STYLING HERE TO CSS FILE
+// AND ALSO CENTER IN THE PAGE
 export default function Loading() {
   return (
     <div

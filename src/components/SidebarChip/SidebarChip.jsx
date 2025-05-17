@@ -2,8 +2,10 @@ import './SidebarChip.css';
 
 import { TABS, VIEWS } from '@constants';
 import handleTabInit from '@utils/handleTabInit';
-
+// NOTE: UPDATE STATE PATH
 import { ACTIONS } from '../../state/appReducer';
+
+// NOTE: UPDATE TABS[VALUE.TOUPPERCASE()] CAN MAKE THIS BETTER
 
 export default function SidebarChip({ id, icon, value, state, dispatch }) {
   return (

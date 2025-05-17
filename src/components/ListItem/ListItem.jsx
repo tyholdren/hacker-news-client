@@ -5,6 +5,7 @@ import { VIEWS } from '@constants';
 import { ArticleIcon, ExternalIcon } from '@icons';
 import { formatUrl, getTimeDiff } from '@utils';
 
+// NOTE: UPDATE STATE TO @state
 import { ACTIONS } from '../../state/appReducer';
 export default function ListItem({
   id,
