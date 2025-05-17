@@ -1,12 +1,13 @@
 import './App.css';
-
-import DetailView from '@components/DetailView/DetailView.jsx';
-import Footer from '@components/Footer/Footer.jsx';
-import Loading from '@components/Loading/Loading';
-import NavBar from '@components/NavBar/NavBar.jsx';
-import Overview from '@components/Overview/Overview.jsx';
-import Portal from '@components/Portal/Portal';
-import Sidebar from '@components/Sidebar/Sidebar';
+import {
+  DetailView,
+  Footer,
+  Loading,
+  NavBar,
+  Overview,
+  Portal,
+  Sidebar,
+} from '@components';
 import { footerData, VIEWS } from '@constants';
 import { handleTabInit } from '@utils';
 import { useEffect, useReducer } from 'react';

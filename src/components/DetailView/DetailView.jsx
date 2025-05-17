@@ -1,9 +1,7 @@
-import Comment from '@components/Comment/Comment';
-import Loading from '@components/Loading/Loading';
-import MetaData from '@components/MetaData/MetaData';
+import { Comment, Loading, MetaData } from '@components';
 import { VIEWS } from '@constants';
 import { getTimeDiff, isPlural, parseHTML, sortByAscending } from '@utils';
-import getPostDetails from '@utils/getPostDetails';
+import { getPostDetails } from '@utils';
 import { useEffect, useState } from 'react';
 
 import { ACTIONS } from '../../state/appReducer';

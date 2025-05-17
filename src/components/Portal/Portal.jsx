@@ -1,8 +1,8 @@
 import './Portal.css';
 
-import SidebarChip from '@components/SidebarChip/SidebarChip';
+import { SidebarChip } from '@components';
 import { TABS } from '@constants';
-import { HackerNewsIcon , XIcon } from '@icons';
+import { HackerNewsIcon, XIcon } from '@icons';
 import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 

@@ -1,7 +1,6 @@
 import './Overview.css';
 
-import ListItem from '@components/ListItem/ListItem.jsx';
-import Loading from '@components/Loading/Loading.jsx';
+import { ListItem, Loading } from '@components';
 import { DownArrowIcon } from '@icons';
 import { handleTabInit } from '@utils';
 

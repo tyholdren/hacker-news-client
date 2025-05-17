@@ -1,6 +1,6 @@
 import './ListItem.css';
 
-import MetaData from '@components/MetaData/MetaData';
+import { MetaData } from '@components';
 import { VIEWS } from '@constants';
 import { ArticleIcon, ExternalIcon } from '@icons';
 import { formatUrl, getTimeDiff } from '@utils';

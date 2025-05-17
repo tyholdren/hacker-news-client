@@ -1,6 +1,6 @@
 import './Sidebar.css';
 
-import SidebarChip from '@components/SidebarChip/SidebarChip.jsx';
+import { SidebarChip } from '@components';
 import { TABS, VIEWS } from '@constants';
 import { HackerNewsIcon } from '@icons';
 import { ACTIONS } from '../../state/appReducer';
