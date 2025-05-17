@@ -1,0 +1,26 @@
+.navBar {
+  display: flex;
+  border-bottom: 1px solid var(--grey-100);
+  min-height: 64px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 32px;
+}
+
+@media (min-width: 768px) {
+  .navBar {
+    display: none;
+  }
+}
+
+.hacker-news-icon--navBar {
+  background-color: white;
+  border: none;
+  font-size: var(--font-size-base);
+}
+
+.navBar__hamburger-btn {
+  background-color: white;
+  border: none;
+  color: black;
+}

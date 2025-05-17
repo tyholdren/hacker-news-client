@@ -86,7 +86,7 @@
   --space-sm: 0.5rem;
   --space-md: 0.75rem;
   --space-lg: 1rem; /*  16px */
-  --space-xl: 1.25rem;
+  --space-xl: 1.25rem; /*  20px */
   --space-2xl: 1.5rem; /* 24px */
   --space-3xl: 1.75rem;
   --space-4xl: 2rem;
@@ -105,22 +105,18 @@ body {
   flex: 1;
 }
 
-.sidebar {
+/* .navBar {
   display: none;
 }
 
-.navBar {
-  display: block;
-}
-
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
   .sidebar {
     display: block;
   }
   .navBar {
     display: none;
   }
-}
+} */
 
 button:hover {
   cursor: pointer;
