@@ -2,6 +2,7 @@ import './SidebarChip.css';
 
 import { TABS, VIEWS } from '@constants';
 import handleTabInit from '@utils/handleTabInit';
+
 // NOTE: UPDATE STATE PATH
 import { ACTIONS } from '../../state/appReducer';
 

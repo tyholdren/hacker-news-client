@@ -4,8 +4,9 @@
     "paths": {
       "@components/*": ["components/*"],
       "@utils/*": ["utils/*"],
-      "@constants": ["constants.js"],
-      "@icons": ["icons/*"]
+      "@constants/*": ["constants/*"],
+      "@icons/*": ["icons/*"],
+      "@hooks/*": ["hooks/*"]
     }
   }
 }

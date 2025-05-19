@@ -7,6 +7,7 @@ module.exports = function override(config) {
     '@utils': path.resolve(__dirname, 'src/utils'),
     '@constants': path.resolve(__dirname, 'src/constants.js'),
     '@icons': path.resolve(__dirname, 'src/icons'),
+    '@hooks': path.resolve(__dirname, 'src/hooks'),
   };
   return config;
 };

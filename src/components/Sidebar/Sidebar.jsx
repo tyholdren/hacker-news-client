@@ -3,6 +3,7 @@ import './Sidebar.css';
 import { SidebarChip } from '@components';
 import { TABS, VIEWS } from '@constants';
 import { HackerNewsIcon } from '@icons';
+
 // NOTE: UPDATE PATH FOR STATE
 import { ACTIONS } from '../../state/appReducer';
 

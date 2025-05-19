@@ -35,6 +35,7 @@ module.exports = {
           ['@components', './src/components'],
           ['@utils', './src/utils'],
           ['@icons', './src/icons'],
+          ['@hooks', './src/hooks'],
           ['@constants', './src/constants.js'],
         ],
         extensions: ['.js', '.jsx'],
