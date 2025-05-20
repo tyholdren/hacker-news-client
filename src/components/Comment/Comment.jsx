@@ -18,26 +18,22 @@ export default function Comment({ isRootComment, data, depth }) {
         <div className="comment__text"> {parseHTML(text)}</div>
       </div>
       {children && (
-        <div>
-          <span className="threadline" aria-hidden="true"></span>
-          <div className="child__container">
-            <div className="rectangle__container">
-              <div className="rectangle1"></div>
-              <div className="rectangle2"></div>
-            </div>
-            <ul className="comment__children">
-              {sortByAscending(children, 'time').map((child, index) => {
-                return (
+        <div className="child__container">
+          <ul className="comment__children">
+            {sortByAscending(children, 'time').map((child, index) => {
+              return (
+                <>
+                  <div className="rectangle1"></div>
                   <Comment
                     key={index}
                     isRootComment={false}
                     data={child}
                     depth={depth + 1}
                   />
-                );
-              })}
-            </ul>
-          </div>
+                </>
+              );
+            })}
+          </ul>
         </div>
       )}
     </li>
