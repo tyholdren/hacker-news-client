@@ -1,6 +1,14 @@
+import './DetailView.css';
+
 import { Comment, Loading, MetaData } from '@components';
 import { VIEWS } from '@constants';
-import { getPostDetails,getTimeDiff, isPlural, parseHTML, sortByAscending  } from '@utils';
+import {
+  getPostDetails,
+  getTimeDiff,
+  isPlural,
+  parseHTML,
+  sortByAscending,
+} from '@utils';
 import { useEffect, useState } from 'react';
 
 import { ACTIONS } from '../../state/appReducer';
@@ -26,26 +34,33 @@ export default function DetailView({ state, dispatch }) {
 
   return (
     <div>
-      <button
-        onClick={() =>
-          dispatch({
-            type: ACTIONS.SET_ACTIVE_VIEW,
-            payload: { activeView: VIEWS.OVERVIEW, activeTab: state.activeTab },
-          })
-        }
-      >
-        Back
-      </button>
+      <div className="back-btn-container">
+        <button
+          onClick={() =>
+            dispatch({
+              type: ACTIONS.SET_ACTIVE_VIEW,
+              payload: {
+                activeView: VIEWS.OVERVIEW,
+                activeTab: state.activeTab,
+              },
+            })
+          }
+        >
+          Back
+        </button>
+      </div>
       <div style={{ marginLeft: '5rem' }}>
-        <h1>{title}</h1>
-        <MetaData
-          score={score}
-          author={author}
-          difference={difference}
-          metric={metric}
-          commentCount={commentCount}
-          isDetailView={true}
-        />
+        <div className="article-title-container">
+          <h1>{title}</h1>
+          <MetaData
+            score={score}
+            author={author}
+            difference={difference}
+            metric={metric}
+            commentCount={commentCount}
+            isDetailView={true}
+          />
+        </div>
         {text && <div>{parseHTML(text)}</div>}
         <h4>
           {commentCount} comment{isPlural(commentCount)}
