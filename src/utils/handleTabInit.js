@@ -12,9 +12,15 @@ export default async function handleTabInit({
   isLoadingMore = false,
 }) {
   if (Object.hasOwn(cache, tab.value) && !isLoadingMore) {
+    dispatch({
+      type: ACTIONS.SET_ACTIVE_VIEW,
+      payload: {
+        activeView: VIEWS.OVERVIEW,
+        activeTab: TABS[tab.value.toUpperCase()],
+      },
+    });
     return;
   }
-
   dispatch({
     type: ACTIONS.FETCH_START,
     payload: { isLoadingMore },

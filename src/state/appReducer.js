@@ -39,7 +39,6 @@ export function reducer(state, action) {
       };
     }
     case ACTIONS.FETCH_FAILURE:
-      console.log('fetch failed');
       break;
     case ACTIONS.SET_ACTIVE_VIEW: {
       return {
