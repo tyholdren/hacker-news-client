@@ -1,7 +1,7 @@
 .sidebar {
   display: none;
   width: 194px;
-  height: 100vh;
+  min-height: 100vh;
   padding: var(--space-2xl) var(--space-lg);
   border-right: 1px solid var(--grey-100);
 }

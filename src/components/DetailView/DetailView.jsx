@@ -33,35 +33,32 @@ export default function DetailView({ state, dispatch }) {
   const { metric, difference } = getTimeDiff(time);
 
   return (
-    <div>
-      <div className="back-btn-container">
-        <button
-          onClick={() =>
-            dispatch({
-              type: ACTIONS.SET_ACTIVE_VIEW,
-              payload: {
-                activeView: VIEWS.OVERVIEW,
-                activeTab: state.activeTab,
-              },
-            })
-          }
-        >
-          Back
-        </button>
-      </div>
-      <div style={{ marginLeft: '5rem' }}>
-        <div className="article-title-container">
-          <h1>{title}</h1>
-          <MetaData
-            score={score}
-            author={author}
-            difference={difference}
-            metric={metric}
-            commentCount={commentCount}
-            isDetailView={true}
-          />
-        </div>
-        {text && <div>{parseHTML(text)}</div>}
+    <div className="back-btn-container">
+      <button
+        onClick={() =>
+          dispatch({
+            type: ACTIONS.SET_ACTIVE_VIEW,
+            payload: {
+              activeView: VIEWS.OVERVIEW,
+              activeTab: state.activeTab,
+            },
+          })
+        }
+      >
+        Back
+      </button>
+
+      <div className="article-title-container">
+        <h1>{title}</h1>
+        <MetaData
+          score={score}
+          author={author}
+          difference={difference}
+          metric={metric}
+          commentCount={commentCount}
+          isDetailView={true}
+        />
+        <div className="article-body">{text && <p>{parseHTML(text)}</p>}</div>
         <h4>
           {commentCount} comment{isPlural(commentCount)}
         </h4>
@@ -69,7 +66,14 @@ export default function DetailView({ state, dispatch }) {
           <ul>
             {tree.children &&
               sortByAscending(tree.children, 'time').map((child, index) => {
-                return <Comment key={index} data={child} />;
+                return (
+                  <Comment
+                    key={index}
+                    isRootComment={true}
+                    data={child}
+                    depth={0}
+                  />
+                );
               })}
           </ul>
         ) : (

@@ -1,7 +1,14 @@
 .article-title-container {
-  height: 74px; 
+  display: flex;
+  flex-direction: column;
+  padding: 40px 91px;
 }
 
 .back-btn-container {
-  height: 84; 
+  min-height: 84px; 
+  margin: var(--space-4xl) 64px;
+}
+
+.article-body {
+  margin: 100px 0px; 
 }
