@@ -1,6 +1,6 @@
 import { getTimeDiff, parseHTML, sortByAscending } from '@utils';
 import './Comment.css';
-export default function Comment({ isRootComment, data, depth }) {
+export default function Comment({ isRootComment, data }) {
   const { by, time, text, children = null } = data;
   if (text === undefined) return;
 
@@ -20,19 +20,23 @@ export default function Comment({ isRootComment, data, depth }) {
       {children && (
         <div className="child__container">
           <ul className="comment__children">
-            {sortByAscending(children, 'time').map((child, index) => {
-              return (
-                <>
-                  <div className="rectangle1"></div>
-                  <Comment
-                    key={index}
-                    isRootComment={false}
-                    data={child}
-                    depth={depth + 1}
-                  />
-                </>
-              );
-            })}
+            <div className="content__container">
+              {sortByAscending(children, 'time').map((child, index) => {
+                return (
+                  <>
+                    <div
+                      className={[
+                        'rectangle1',
+                        index === 0 && 'rectangle--first',
+                      ]
+                        .filter(Boolean)
+                        .join(' ')}
+                    ></div>
+                    <Comment key={index} isRootComment={false} data={child} />
+                  </>
+                );
+              })}
+            </div>
           </ul>
         </div>
       )}
