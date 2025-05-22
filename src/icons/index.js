@@ -19,3 +19,4 @@ export { default as TimeIcon } from './TimeIcon.svg?react';
 export { default as TwitterIcon } from './TwitterIcon.svg?react';
 export { default as XIcon } from './XIcon.svg?react';
 export { default as YoutubeIcon } from './YoutubeIcon.svg?react';
+export { default as LeftArrow } from './LeftArrow.svg?react';

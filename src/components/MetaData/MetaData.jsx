@@ -11,7 +11,7 @@ export default function MetaData({
   isDetailView,
 }) {
   return (
-    <div style={{ display: 'flex', gap: '1rem' }}>
+    <div className="meta-data-container">
       <div className="meta-data__item">
         <PointsIcon />
         <span className="meta-data__item__text">{score} points</span>
@@ -40,7 +40,7 @@ export default function MetaData({
       ) : (
         <div className="meta-data__item">
           <CommentIcon />
-          <span>
+          <span className="meta-data__item__text">
             {commentCount} comment{isPlural(commentCount)}
           </span>
         </div>

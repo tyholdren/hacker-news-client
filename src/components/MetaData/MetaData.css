@@ -1,3 +1,10 @@
+.meta-data-container {
+  min-height: 20px; 
+  display: flex; 
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
 .meta-data__item {
   display: flex;
   align-items: center;
@@ -5,8 +12,8 @@
 }
 
 .meta-data__item__text {
-  font-size: var(--font-size-xs);
-  line-height: var(--font-size-base);
+  font-size: 14px;;
+  line-height: 20px;
   color: var(--grey-400);
 }
 

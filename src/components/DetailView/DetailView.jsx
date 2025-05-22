@@ -1,5 +1,5 @@
 import './DetailView.css';
-
+import { LeftArrow } from '@icons/';
 import { Comment, Loading, MetaData } from '@components';
 import { VIEWS } from '@constants';
 import {
@@ -46,11 +46,12 @@ export default function DetailView({ state, dispatch }) {
           })
         }
       >
+        <LeftArrow />
         Back
       </button>
 
       <div className="article-title-container">
-        <h1>{title}</h1>
+        <h1 className="article__title">{title}</h1>
         <MetaData
           score={score}
           author={author}
@@ -60,7 +61,7 @@ export default function DetailView({ state, dispatch }) {
           isDetailView={true}
         />
         <div className="article-body">{text && <p>{parseHTML(text)}</p>}</div>
-        <h4>
+        <h4 className="comment-count">
           {commentCount} comment{isPlural(commentCount)}
         </h4>
         {!isLoading ? (

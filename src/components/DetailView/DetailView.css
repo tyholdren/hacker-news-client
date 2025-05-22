@@ -4,15 +4,41 @@
   padding: 40px 91px;
 }
 
+.article-body {
+  margin-bottom: 40px;
+}
+
 .back-btn-container {
   min-height: 84px; 
   margin: var(--space-4xl) 64px;
 }
 
-.article-body {
-  margin: 100px 0px; 
+.back-btn {
+  display: flex; 
+  gap: 4px;
+  align-items: center;
+  color: var(--orange-200); 
+  background-color: var(--white-100); 
+  border: none; 
+  min-height: 20px; 
+  min-width: 60px; 
+  font-size: 14px;
+  line-height: 20px; 
+  border-bottom: 1px solid transparent; 
 }
 
-.back-btn {
-  color: var(--orange-500)
+.back-btn:hover { 
+  border-bottom: 1px solid var(--orange-200); 
+}
+
+.article__title {
+  margin-bottom: 16px;
+}
+
+.comment-count {
+  min-height: 60px; 
+  padding: 16px 0px; 
+  font-size: 18px;
+  line-height: 28px;
+  border-top: 1px solid grey;
 }

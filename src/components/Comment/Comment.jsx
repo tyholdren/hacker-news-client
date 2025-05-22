@@ -10,9 +10,10 @@ export default function Comment({ isRootComment, data }) {
     <li className={isRootComment ? 'comment__root' : 'comment'}>
       <div className="comment__box">
         <p className="comment__meta">
-          <b>{by}</b>
-          <span>
-            •{difference} {metric} ago
+          <b className="comment__meta__text">{by}</b>
+          <span className="comment__meta__text--time">•</span>
+          <span className="comment__meta__text--time">
+            {difference} {metric} ago
           </span>
         </p>
         <div className="comment__text"> {parseHTML(text)}</div>
