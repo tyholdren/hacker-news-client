@@ -6,6 +6,10 @@
   border-right: 1px solid var(--grey-100);
 }
 
+.sidebar--detail-view {
+  width: 240px; 
+}
+
 @media (min-width: 768px) {
   .sidebar {
     display: block;

@@ -8,8 +8,16 @@ import { HackerNewsIcon } from '@icons';
 import { ACTIONS } from '../../state/appReducer';
 
 export default function Sidebar({ state, dispatch }) {
+  console.log({ state });
   return (
-    <div className="sidebar">
+    <div
+      className={[
+        'sidebar',
+        state.activeView === VIEWS.DETAIL_VIEW && 'sidebar--detail-view',
+      ]
+        .filter(Boolean)
+        .join(' ')}
+    >
       <button
         className="hacker-news-icon"
         onClick={() =>

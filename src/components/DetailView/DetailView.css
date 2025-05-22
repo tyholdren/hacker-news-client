@@ -6,11 +6,22 @@
 
 .article-body {
   margin-bottom: 40px;
+  font-size: 18px;
+  line-height: 28px;
+  color: grey; 
 }
+
+.btn-container {
+  height: 84px; 
+  display: flex;
+  align-items: center;
+}
+
 
 .back-btn-container {
   min-height: 84px; 
   margin: var(--space-4xl) 64px;
+  margin-top: 0px
 }
 
 .back-btn {
@@ -32,6 +43,8 @@
 }
 
 .article__title {
+  font-size: 36px; 
+  line-height: 40px;
   margin-bottom: 16px;
 }
 
@@ -40,5 +53,5 @@
   padding: 16px 0px; 
   font-size: 18px;
   line-height: 28px;
-  border-top: 1px solid grey;
+  border-top: 1px solid var(--grey-100);
 }

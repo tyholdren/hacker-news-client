@@ -30,6 +30,7 @@ function App() {
   }, []);
 
   const { showPortal, isLoading, activeView } = state;
+  console.log({ activeView });
 
   return (
     <div className="app">

@@ -6,7 +6,7 @@
 .comment {
   margin-left: 0px; 
   margin-top: -13px;
-  border-left: 1.75px solid var(--grey-200);
+  border-left: 1.75px solid var(--grey-100);
   padding-left: 25px;
 }
 .comment__meta__text,
@@ -43,8 +43,8 @@
 .rectangle1 {
   height: 50px;
   width: 15px; 
-  border-bottom: 1.75px solid var(--grey-200);
-  border-left: 1.75px solid var(--grey-200);
+  border-bottom: 1.75px solid var(--grey-100);
+  border-left: 1.75px solid var(--grey-100);
   border-bottom-left-radius: 8px;
 }
 

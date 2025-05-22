@@ -34,21 +34,23 @@ export default function DetailView({ state, dispatch }) {
 
   return (
     <div className="back-btn-container">
-      <button
-        className="back-btn"
-        onClick={() =>
-          dispatch({
-            type: ACTIONS.SET_ACTIVE_VIEW,
-            payload: {
-              activeView: VIEWS.OVERVIEW,
-              activeTab: state.activeTab,
-            },
-          })
-        }
-      >
-        <LeftArrow />
-        Back
-      </button>
+      <div className="btn-container">
+        <button
+          className="back-btn"
+          onClick={() =>
+            dispatch({
+              type: ACTIONS.SET_ACTIVE_VIEW,
+              payload: {
+                activeView: VIEWS.OVERVIEW,
+                activeTab: state.activeTab,
+              },
+            })
+          }
+        >
+          <LeftArrow />
+          Back
+        </button>
+      </div>
 
       <div className="article-title-container">
         <h1 className="article__title">{title}</h1>

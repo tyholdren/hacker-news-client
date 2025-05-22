@@ -15,7 +15,6 @@ export default function Overview({ state, dispatch }) {
     startIndex = 0,
     ids = [],
   } = state.cache[state.activeTab.value] || {};
-  console.log('IDS:', ids, 'IDS.LENGTH', ids.length, 'START INDEX', startIndex);
   // NOTE: add different styling for the disabled more button, logic is correct
 
   return (
