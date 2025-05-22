@@ -12,3 +12,7 @@
 .article-body {
   margin: 100px 0px; 
 }
+
+.back-btn {
+  color: var(--orange-500)
+}

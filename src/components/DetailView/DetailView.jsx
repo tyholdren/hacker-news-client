@@ -35,6 +35,7 @@ export default function DetailView({ state, dispatch }) {
   return (
     <div className="back-btn-container">
       <button
+        className="back-btn"
         onClick={() =>
           dispatch({
             type: ACTIONS.SET_ACTIVE_VIEW,
