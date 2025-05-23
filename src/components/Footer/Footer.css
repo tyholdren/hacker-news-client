@@ -5,8 +5,8 @@ footer {
 }
 
 .footer__content {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: var( --font-size-sm); 
+  line-height: var(--line-height-sm); 
   color: var(--grey-300);
 }
 

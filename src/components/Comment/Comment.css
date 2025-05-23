@@ -1,18 +1,19 @@
 .comment, .comment__root {
   min-height: 72px; 
-  padding-bottom: 1rem;
+  padding-bottom: var(--space-lg); 
 }
 
 .comment {
-  margin-left: 0px; 
+  margin-left: var(--space-0); 
   margin-top: -13px;
   border-left: 1.75px solid var(--grey-100);
   padding-left: 25px;
 }
+
 .comment__meta__text,
 .comment__meta__text--time {
-  font-size: 14px; 
-  line-height: 20px;
+  font-size: var(--font-size-sm); 
+  line-height: var(--line-height-sm); 
 }
 
 .comment__meta__text--time {
@@ -21,15 +22,15 @@
 
 .comment__meta {
   display: flex; 
-  gap: 8px; 
-  height: 20px;
-  margin-bottom: 12px;
+  gap: var(--space-sm); 
+  height: var(--line-height-sm); 
+  margin-bottom: var(--space-md); 
 }
 
 .comment__text {
-  font-size: 14px; 
-  line-height: 20px;
-  color: black; 
+  font-size: var(--font-size-sm); 
+  line-height: var(--line-height-sm); 
+  color: var(--black-200); 
 }
 
 .comment:last-child {
@@ -45,11 +46,11 @@
   width: 15px; 
   border-bottom: 1.75px solid var(--grey-100);
   border-left: 1.75px solid var(--grey-100);
-  border-bottom-left-radius: 8px;
+  border-bottom-left-radius: var(--space-sm); 
 }
 
 .rectangle--first {
-  margin-top: 1rem; 
+  margin-top: var(--space-lg); 
 }
 
 .content__container {
@@ -58,17 +59,16 @@
 }
 
 .comment__children {
-  padding-left: 0px;
+  padding-left: var(--space-0);
   
 }
 
-
 .child__container {
   display: flex;
-  margin-left: 20px; 
+  margin-left: var(--space-xl); 
 }
 
 .child__container--border {
   border-left: 1px solid black; 
-
 }
+

@@ -21,7 +21,7 @@
 .back-btn-container {
   min-height: 84px; 
   margin: var(--space-4xl) 64px;
-  margin-top: 0px
+  margin-top: var(--space-0); 
 }
 
 .back-btn {
@@ -31,10 +31,10 @@
   color: var(--orange-200); 
   background-color: var(--white-100); 
   border: none; 
-  min-height: 20px; 
+  min-height: var(--space-xl);
   min-width: 60px; 
-  font-size: 14px;
-  line-height: 20px; 
+  font-size: var(--font-size-sm); 
+  line-height: var(--line-height-sm); 
   border-bottom: 1px solid transparent; 
 }
 
@@ -45,12 +45,12 @@
 .article__title {
   font-size: 36px; 
   line-height: 40px;
-  margin-bottom: 16px;
+  margin-bottom: var(--space-lg); 
 }
 
 .comment-count {
   min-height: 60px; 
-  padding: 16px 0px; 
+  padding: var(--space-lg) var(--space-0); 
   font-size: 18px;
   line-height: 28px;
   border-top: 1px solid var(--grey-100);
