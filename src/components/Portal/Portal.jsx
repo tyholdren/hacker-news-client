@@ -7,41 +7,7 @@ import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 import { ACTIONS } from '../../state/appReducer';
-
-// NOTE: MOVE THESE HOOKS OUTSIDE INTO A HOOKS FOLDER
-function useOnKeydown(key, fn) {
-  useEffect(() => {
-    function handleKeydown(event) {
-      if (event.key === key) {
-        fn();
-      }
-    }
-    document.addEventListener('keydown', handleKeydown);
-    return () => document.removeEventListener('keydown', handleKeydown);
-  }, [fn]);
-}
-
-function useOnClickOutside(ref, fn) {
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (
-        event.target instanceof Node &&
-        ref.current &&
-        !ref.current.contains(event.target)
-      ) {
-        fn();
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('touchevent', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('touchevent', handleClickOutside);
-    };
-  }, [fn]);
-}
+import { useOnKeydown, useOnClickOutside } from '@hooks';
 
 export default function Portal({ state, dispatch }) {
   useOnKeydown('Escape', () => dispatch({ type: ACTIONS.TOGGLE_PORTAL }));
