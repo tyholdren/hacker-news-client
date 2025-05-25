@@ -1,24 +1,24 @@
-.article-title-container {
+.detail-container__article {
   display: flex;
   flex-direction: column;
   padding: 40px 91px;
 }
 
-.article-body {
+.article__body {
   margin-bottom: 40px;
   font-size: 18px;
   line-height: 28px;
   color: grey; 
 }
 
-.btn-container {
+.detail-container__back-btn {
   height: 84px; 
   display: flex;
   align-items: center;
 }
 
 
-.back-btn-container {
+.detail-container {
   min-height: 84px; 
   margin: var(--space-4xl) 64px;
   margin-top: var(--space-0); 

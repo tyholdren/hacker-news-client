@@ -33,8 +33,8 @@ export default function DetailView({ state, dispatch }) {
   const { metric, difference } = getTimeDiff(time);
 
   return (
-    <div className="back-btn-container">
-      <div className="btn-container">
+    <div className="detail-container">
+      <div className="detail-container__back-btn">
         <button
           className="back-btn"
           onClick={() =>
@@ -52,7 +52,7 @@ export default function DetailView({ state, dispatch }) {
         </button>
       </div>
 
-      <div className="article-title-container">
+      <div className="detail-container__article">
         <h1 className="article__title">{title}</h1>
         <MetaData
           score={score}
@@ -62,7 +62,7 @@ export default function DetailView({ state, dispatch }) {
           commentCount={commentCount}
           isDetailView={true}
         />
-        <div className="article-body">{text && <p>{parseHTML(text)}</p>}</div>
+        <div className="article__body">{text && <p>{parseHTML(text)}</p>}</div>
         <h4 className="comment-count">
           {commentCount} comment{isPlural(commentCount)}
         </h4>
