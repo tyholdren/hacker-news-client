@@ -1,4 +1,4 @@
-.comment, .comment__root {
+.comment, .comment--parent {
   min-height: 72px; 
   padding-bottom: var(--space-lg); 
 }
@@ -10,17 +10,17 @@
   padding-left: 25px;
 }
 
-.comment__meta__text,
-.comment__meta__text--time {
+.metadata__text,
+.metadata__time {
   font-size: var(--font-size-sm); 
   line-height: var(--line-height-sm); 
 }
 
-.comment__meta__text--time {
+.metadata__time {
   color: gray
 }
 
-.comment__meta {
+.comment__container__metadata {
   display: flex; 
   gap: var(--space-sm); 
   height: var(--line-height-sm); 
@@ -41,7 +41,7 @@
   display: flex;
 }
 
-.rectangle1 {
+.comment-link {
   height: 50px;
   width: 15px; 
   border-bottom: 1.75px solid var(--grey-100);
@@ -49,26 +49,20 @@
   border-bottom-left-radius: var(--space-sm); 
 }
 
-.rectangle--first {
+.comment-link--primary {
   margin-top: var(--space-lg); 
 }
 
-.content__container {
+.children__content {
   display: flex;
   flex-direction: column;
 }
 
-.comment__children {
+.children {
   padding-left: var(--space-0);
-  
 }
 
-.child__container {
+.comment__children__container {
   display: flex;
   margin-left: var(--space-xl); 
 }
-
-.child__container--border {
-  border-left: 1px solid black; 
-}
-

@@ -71,7 +71,7 @@ export default function DetailView({ state, dispatch }) {
             {tree.children &&
               sortByAscending(tree.children, 'time').map((child, index) => {
                 return (
-                  <Comment key={index} isRootComment={true} data={child} />
+                  <Comment key={index} isParentComment={true} data={child} />
                 );
               })}
           </ul>
