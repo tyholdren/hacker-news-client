@@ -1,0 +1,26 @@
+.loading-alert {
+  min-height: 200px;
+  min-width: 320px; 
+  padding: 24px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.alert-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.header {
+  margin-bottom: 8px;
+  font-size: var(--font-size-xl);
+}
+
+.desc{
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+}

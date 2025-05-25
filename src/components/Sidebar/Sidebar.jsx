@@ -8,7 +8,6 @@ import { HackerNewsIcon } from '@icons';
 import { ACTIONS } from '../../state/appReducer';
 
 export default function Sidebar({ state, dispatch }) {
-  console.log({ state });
   return (
     <div
       className={[

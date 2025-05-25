@@ -30,7 +30,6 @@ function App() {
   }, []);
 
   const { showPortal, isLoading, activeView } = state;
-  console.log({ activeView });
 
   return (
     <div className="app">
@@ -39,7 +38,7 @@ function App() {
         {showPortal && <Portal state={state} dispatch={dispatch} />}
         <Sidebar state={state} dispatch={dispatch} />
         <main className="app__main">
-          <div className="app__content">
+          <div className={isLoading ? 'app__content--loading' : 'app__content'}>
             {isLoading ? (
               <Loading />
             ) : activeView === VIEWS.OVERVIEW ? (

@@ -6,6 +6,8 @@ export default function Comment({ isRootComment, data }) {
 
   const { metric, difference } = getTimeDiff(time);
 
+  // NOTE: RENAME THESE CLASSNAMES TO MAKE MORE SENSE
+
   return (
     <li className={isRootComment ? 'comment__root' : 'comment'}>
       <div className="comment__box">
@@ -24,7 +26,7 @@ export default function Comment({ isRootComment, data }) {
             <div className="content__container">
               {sortByAscending(children, 'time').map((child, index) => {
                 return (
-                  <>
+                  <div key={`${index}-rectangle`}>
                     <div
                       className={[
                         'rectangle1',
@@ -34,7 +36,7 @@ export default function Comment({ isRootComment, data }) {
                         .join(' ')}
                     ></div>
                     <Comment key={index} isRootComment={false} data={child} />
-                  </>
+                  </div>
                 );
               })}
             </div>

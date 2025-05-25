@@ -55,3 +55,7 @@
   line-height: 28px;
   border-top: 1px solid var(--grey-100);
 }
+
+.detail-container__loading {
+  margin-top: 150px;  
+}

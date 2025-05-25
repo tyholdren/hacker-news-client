@@ -76,7 +76,9 @@ export default function DetailView({ state, dispatch }) {
               })}
           </ul>
         ) : (
-          <Loading />
+          <div className="detail-container__loading">
+            <Loading />
+          </div>
         )}
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { SIZE } from '@constants';
+import { SIZE, VIEWS, TABS } from '@constants';
 
 import { ACTIONS } from '../state/appReducer';
 import fetchBatchPosts from './fetchBatchPosts';
