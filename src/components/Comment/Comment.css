@@ -43,7 +43,8 @@
 
 .comment-link {
   height: 50px;
-  width: 15px; 
+  width: 1rem; 
+  /* width: 15px;  */
   border-bottom: 1.75px solid var(--grey-100);
   border-left: 1.75px solid var(--grey-100);
   border-bottom-left-radius: var(--space-sm); 
