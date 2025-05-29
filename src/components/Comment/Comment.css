@@ -3,6 +3,10 @@
   padding-bottom: var(--space-lg); 
 }
 
+.comment--parent {
+  border-bottom: 1px solid var(--grey-100)
+}
+
 .comment {
   margin-left: var(--space-0); 
   margin-top: -13px;
