@@ -24,7 +24,7 @@ export default function Comment({ isParentComment, data }) {
             <div className="children__content">
               {sortByAscending(children, 'time').map((child, index) => {
                 return (
-                  <>
+                  <div key={`${child}-${index}`}>
                     <div
                       className={[
                         'comment-link',
@@ -34,7 +34,7 @@ export default function Comment({ isParentComment, data }) {
                         .join(' ')}
                     ></div>
                     <Comment key={index} isParentComment={false} data={child} />
-                  </>
+                  </div>
                 );
               })}
             </div>

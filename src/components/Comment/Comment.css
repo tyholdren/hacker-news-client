@@ -1,6 +1,9 @@
 .comment, .comment--parent {
   min-height: 72px; 
-  padding-bottom: var(--space-lg); 
+  /* NOTE: WE HAVE TO CHANGE THIS MIN-HEIGHT 
+  IN ORDER TO FIX SPACING AT BOTTOM OF SUB COMMENTS */
+  /* padding-bottom: var(--space-sm); 
+  margin-bottom: var(--space-sm) */
 }
 
 .comment--parent {
