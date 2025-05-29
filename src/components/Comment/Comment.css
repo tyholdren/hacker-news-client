@@ -49,13 +49,10 @@
   border-bottom-left-radius: var(--space-sm); 
 }
 
-.comment-link--primary {
-  margin-top: var(--space-lg); 
-}
-
 .children__content {
   display: flex;
   flex-direction: column;
+  margin-top: 4px; 
 }
 
 .children {
